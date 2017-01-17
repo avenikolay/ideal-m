@@ -16,7 +16,7 @@ var gulp = require('gulp'),
 
 
 //делаем сервер
-gulp.task('browser-sync', function(){
+gulp.task('server', function(){
 	browserSync({
 		server: {
 			baseDir: 'src'
@@ -66,7 +66,7 @@ gulp.task('wiredep', function() {
 //{ignorePath: /^(\.\.\/)*\.\./}
 
 //создаем слежку
-gulp.task('watch', ['browser-sync','jade', 'sass', 'wiredep'], function(){
+gulp.task('watch', ['server','jade', 'sass', 'wiredep'], function(){
 	gulp.watch('src/templates/**/*.jade', ['jade']);
 	gulp.watch('src/scss/**/*.scss', ['sass']);
 	gulp.watch('bower.json', ['wiredep']);
