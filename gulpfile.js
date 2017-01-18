@@ -66,8 +66,14 @@ gulp.task('wiredep', function() {
 //{ignorePath: /^(\.\.\/)*\.\./}
 
 //создаем слежку
-gulp.task('watch', ['server','jade', 'sass', 'wiredep'], function(){
-	gulp.watch('src/templates/**/*.jade', ['jade']);
+gulp.task('watch', ['jade', 'sass', 'wiredep'], function(){
+	browserSync({
+		server: {
+			baseDir: 'src'
+		},
+		notify: false
+	})
+	gulp.watch('src/jade/**/*.jade', ['jade']);
 	gulp.watch('src/scss/**/*.scss', ['sass']);
 	gulp.watch('bower.json', ['wiredep']);
 });

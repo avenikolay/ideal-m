@@ -1,0 +1,61 @@
+$brand-color: #b206c8;
+$text-color: #333333;
+$vertical-bp: 45px;
+$present-btn-height: 45px;
+
+@mixin vertical-bp {
+	padding: 45px 0;
+}
+@mixin block-title($color: false) {
+	@if ($color == #fff) {
+		color: $color;
+		&:after {
+			background: $color;
+		}
+	}
+	@else {
+		color: $text-color;
+		&:after {
+			background: $brand-color;
+		}
+	}
+	padding: 0;
+	margin: 0 0 40px;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 20px;
+	&:after {
+		content: "";
+		display: block;
+		height: 4px;
+		width: 83px;
+		margin: 30px auto 0;
+	}
+}
+
+@mixin present-btn() {
+	height: $present-btn-height;
+	max-width: 250px;
+	background: #fff;
+	font-weight: bold;
+	font-size: 20px;
+	text-transform: uppercase;
+	text-align: center;
+	border-radius: 5px;
+	line-height: 20px;
+	padding: 12.5px 0;
+	@include center-block;
+	position: absolute;
+	bottom: $vertical-bp;
+	margin: auto;
+	left: 0;
+	right: 0;
+	color: $text-color;
+	&:hover, &:focus{
+		background:$text-color;
+		color: #fff;
+		text-decoration: none;
+	}
+}

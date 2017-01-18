@@ -1,0 +1,308 @@
+@import '../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+@import '../bower_components/font-awesome/scss/font-awesome.scss';
+@import '../bower_components/roboto-fontface/css/roboto/sass/roboto-fontface.scss';
+/* @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&subset=cyrillic');
+ */@import '_vars.scss';
+
+
+body {
+	font-family: 'Roboto', sans-serif;
+	color: $text-color;
+}
+.header {
+	overflow: hidden;
+	min-height: 137px;
+	@include vertical-bp;
+	&__col {
+		&-1 {
+			@include make-md-column(4);
+		}
+		&-2 {
+			@include make-md-column(6);
+		}
+		&-3 {
+			@include make-md-column(2);
+		}
+	}
+}
+.logo {
+	padding: 0;
+	margin: 0;
+	&__text {
+		display: none;
+	}
+}
+.nav, .socials {
+	&__list {
+		padding: 0;
+		margin: 0;
+	}
+	&__item {
+		display: inline-block;
+	}
+}
+.nav {
+	padding: 10px 0;
+	&__item {
+		font-size: 14px;
+		text-transform: uppercase;
+		color: #2f2f2f;
+		margin-left: 10px;
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+	&__link {
+		color: #2f2f2f;
+		&:hover, &:focus {
+			text-decoration: none;
+		}
+	}
+}
+.socials {
+	&__item {
+		font-size: 21.96px;
+		margin-left: 5px;
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+	&__link {
+		color: #949494;
+	}
+}
+
+.slider {
+	overflow: hidden;
+	background: $brand-color;
+	min-height: 540px;
+	position: relative;
+	@include vertical-bp;
+	&__slogan{
+		padding: 0;
+		margin: auto;
+		text-align: center;
+		font-size: 59.14px;
+		color: #fff;
+		overflow: hidden;
+	}
+	&__btn {
+		@include present-btn;
+	}
+}
+
+.contacts {
+	overflow: hidden;
+	background:#efefef;
+	min-height: 140px;
+	@include vertical-bp;
+	&__col {
+		&-1, &-2 {
+			@include make-md-column(6);
+			position: relative;
+		}
+	}
+	&__phone-t, &__phone-n, &__address-t, &__address-s {
+		display: block;
+		text-align: center;
+	}
+	/* &__phone, &__address {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		overflow: hidden;
+	} */
+	&__phone-t {
+		font-size: 14px;
+		font-weight: bold;
+	}
+	&__phone-n {
+		font-size: 26.97px;
+		font-weight: bold;
+	}
+	&__address-t {
+		font-size: 14px;
+		font-weight: bold;
+	}
+	&__address-s {
+		font-size: 15.5px;
+	}
+}
+
+.advantages {
+	overflow: hidden;
+	@include vertical-bp;
+	&__title {
+		@include block-title;
+	}
+	&__list {
+		padding: 0;
+		margin: 0;
+	}
+	&__item {
+		list-style-type: none;
+		@include make-md-column(3);
+		@include make-sm-column(3);
+		text-align: center;
+	}
+	&__subtitle {
+		font-size: 14px;
+		font-weight: bold;
+		padding: 0;
+		margin: 0 0 20px;
+	}
+	&__{
+		font-size: 14px;
+		margin-bottom: 0;
+	}
+	.row:nth-child(1) > &__item {
+		margin-bottom: 50px
+	}
+	.row:nth-child(2) > &__item {
+		@media (max-width: 767px) {
+			margin-bottom: 50px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.simple {
+	overflow: hidden;
+	min-height: 534px;
+	background: #efefef;
+	position: relative;
+	@include vertical-bp;
+	&__title {
+		@include block-title;
+	}
+	&__btn {
+		@include present-btn;
+	}
+}
+
+.brands {
+	overflow: hidden;
+	position: relative;
+	@include vertical-bp;
+	&__title {
+		@include block-title;
+	}
+}
+
+.catalogue {
+	overflow: hidden;
+	position: relative;
+	@include vertical-bp;
+	background: $brand-color;
+	&__title {
+		@include block-title($color: #fff);
+	}
+	&__list {
+		padding: 0;
+		margin: 0 0 100px + $present-btn-height;
+		position: relative; 
+		overflow: hidden;
+	}
+	&__item {
+		list-style-type: none;
+		@include make-md-column(3);
+	}
+	&__ubtn {
+		position: relative;
+		overflow: hidden;
+		min-height: 45px;
+	}
+	&__btn {
+		@include present-btn;
+	}
+	&__name {
+		margin: 0;
+		padding: 0;
+		font-size: 16px;
+		color: #fff;
+		font-weight: normal;
+	}
+}
+
+.about {
+	overflow: hidden;
+	@include vertical-bp;
+	&__title {
+		@include block-title;
+	}
+}
+
+.company {
+	overflow: hidden;
+	@include vertical-bp;
+	&__title {
+		@include block-title;
+	}
+
+	background: #efefef;
+
+	&__col {
+		&-1 {
+			@include make-md-column(6);
+		}
+		&-2 {
+			@include make-md-column(3);
+		}
+		&-3 {
+			@include make-md-column(3);
+		}
+	}
+	&__about, &__newstitle, &__contactstitle {
+		margin: 0 0 25px;
+		padding: 0;
+		font-size: 14px;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	&__newslist {
+		margin: 0;
+		padding: 0;
+	}
+	&__newsitem {
+		list-style-type: none;
+	}
+	&__newslink {
+		color: $text-color;
+		&:hover, &:focus {
+			text-decoration: none;
+			color: lighten($text-color, 30%);
+		}
+	}
+	&__newstexst, &__newsdate {
+		display: block;
+	}
+}
+
+.copiright {
+	overflow: hidden;
+	@include vertical-bp;	
+}
+
+.footer {
+	&:before {
+		content: "";
+		display: block;
+		height: 4px;
+		background: $brand-color;
+		@extend .container;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+

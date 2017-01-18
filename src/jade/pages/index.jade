@@ -1,0 +1,76 @@
+extends ../layouts/main_layout.jade
+
+block slider
+	.slider
+		.container-fluid
+			h2.slider__slogan У вас есть <strong>магазин</strong>? <br> Закупайтесь у нас!
+			a(href="#" title='закупиться').slider__btn Закупиться
+block contacts
+	section.contacts
+		.container
+			.row
+				.contacts__col-1
+					.contacts__phone
+						span.contacts__phone-t Вы можете связаться с нами по телефону
+						span.contacts__phone-n +992 44 625 0077
+				.contacts__col-2
+					.contacts__address
+						span.contacts__address-t Приехать к нам в офис по адресу:
+						span.contacts__address-s Ул. им. Титова дом 30/2, кв 32
+block advantages
+	section.advantages
+		.container
+			h2.advantages__title Наши преимущества
+		.container
+			ul.advantages__list
+				- var advantages1 = [{title:"Управление продажами",text:"Управление во всех каналах сбыта на территории города Душанбе и Республики Таджикистан"},{title:"Доставка за 24 часа",text:"Мы обеспечим доставку в течении 24 часов, вне зависимости от расположения торговой точки"}, {title:"Прозрачность",text:"Мы обеспечим полную информационную  прозрачность"},{title:"Эффективный маркетинг",text:"Проведение маркетинговых акций во всех каналах сбыта любой направленности"}]
+				- var advantages2 = [{title:"Финансовая устойчивость",text:"Выстроенная система финансового учета"},{title:"Профессиональная команда",text:"Сформированные профессиональные команды в продажах и логистике"},{title:"Грамотная логистика",text:"Высокий уровень дистрибуции во всех каналах сбыта на всех обслуживаемых территориях"}, {title:"Складские мощности",text:"Современные склады и складские технологии, обеспечивающие минимальные издержки"}]
+				.row
+					each item in advantages1
+						li.advantages__item
+								h3.advantages__subtitle= item.title
+								p.advantages__text= item.text
+				.row
+					each item in advantages2
+						li.advantages__item
+								h3.advantages__subtitle= item.title
+								p.advantages__text= item.text
+block simple
+	section.simple
+		.container
+			h2.simple__title С нами очень легко
+			a(href="#" title='стать партнером').simple__btn Стать партнером
+
+block brands
+	section.brands
+		.container
+			h2.brands__title Наши бренды
+		.container
+			ul.brands__list
+				each item in ['Ahmad Tea', 'Baumont Fars', 'Bonduelle', 'brf', 'Coca-Cola', 'dmk', 'Соки Биола']
+					li.brands__item
+						a(href="#").brands__link= item
+
+block catalogue
+	section.catalogue
+		.container
+			h2.catalogue__title Каталог продукции
+		.container
+			.row
+				ul.catalogue__list
+					- var catalogue = [{title:"Молочные продукты",icon:""},{title:"Консервы",icon:""},{title:"Бакалея",icon:""},{title:"Соусы Приправы",icon:""},{title:"Еда быстрого приготовления",icon:""},{title:"Чай",icon:""},{title:"Кондитерские изделия",icon:""}, {title:"Бытовая химия",icon:""}] 
+					each item in catalogue
+						li.catalogue__item
+							h3.catalogue__name= item.title
+		.container
+			a(href="#").catalogue__btn Закупиться
+block about
+	section.about
+		.container
+			h2.about__title Первые на рынки таджикистана
+			ul.about__list
+				- var about = [{title:"О Компани",text:"Компания Таймерс основана в 1997 году, в городе Красноярск. Основным направлением нашей деятельности является дистрибьюция продуктов питания. По видам продукции можно выделить 3 направления, по которым мы работаем: бакалея, кондитерские изделия, колбасная продукция. В рамках этих направлений представлена продукция известных российских и зарубежных производителей: Молочная продукция компании «Назаровское молоко», продукция компании «Орими трэйд» (чай принцесса Канди, Нури, Ява, Гринфилд, Tess).Кондитерские изделия компаний «Рахат»,  «Пензенская кондитерская фабрика», «Продвагон», «Сладонеж», и т.д. ; Колбасная продукция компаний КПК. С 2006 года начал работать филиал компании в г. Абакан (Республика Хакассия). Собственные склады и подъездные пути в Хакассии дают нам возможность качественно обслуживать наших клиентов."},{title:"Наши цели",text:""}, {title:"Миссия",text:""},{title:"Партнерам",text:""},{title:"Вакансии",text:""}]
+				each item in about
+					li.about__item
+						h3.catlogue__title= item.title
+						p.catlogue__text= item.text
