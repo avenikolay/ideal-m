@@ -2,7 +2,9 @@
 @import '../bower_components/font-awesome/scss/font-awesome.scss';
 @import '../bower_components/roboto-fontface/css/roboto/sass/roboto-fontface.scss';
 /* @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&subset=cyrillic');
- */@import '_vars.scss';
+ */
+@import '_vars.scss';
+@import '_sprites.scss';
 
 
 body {
@@ -16,9 +18,15 @@ body {
 	&__col {
 		&-1 {
 			@include make-md-column(4);
+			@media (max-width: 991px) {
+				margin-bottom: $vertical-bp/2;
+			}
 		}
 		&-2 {
 			@include make-md-column(6);
+			@media (max-width: 991px) {
+				margin-bottom: $vertical-bp/2;
+			}
 		}
 		&-3 {
 			@include make-md-column(2);
@@ -30,6 +38,9 @@ body {
 	margin: 0;
 	&__text {
 		display: none;
+	}
+	@media (max-width: 991px) {
+		text-align: center;
 	}
 }
 .nav, .socials {
@@ -60,6 +71,11 @@ body {
 	}
 }
 .socials {
+	&__list {
+		@media (max-width: 991px) {
+			text-align: center;
+		}
+	}
 	&__item {
 		font-size: 21.96px;
 		margin-left: 5px;
@@ -70,12 +86,36 @@ body {
 	&__link {
 		color: #949494;
 	}
+	&__facebook {
+		@include icon(facebook-square);
+		&:hover, &:focus {
+			color: #004fbb;
+		}
+	}
+	&__instagram {
+		@include icon(instagram);
+		&:hover, &:focus {
+			color: #8f4a00;
+		}
+	}
+	&__phone {
+		@include icon(phone-square);
+		&:hover, &:focus {
+			color: #08a100;
+		}
+	}
 }
 
 .slider {
 	overflow: hidden;
 	background: $brand-color;
 	min-height: 540px;
+	height: 1px;
+	& > .container-fluid {
+		height: 100%;
+		display: table;
+		width: 100%;
+	}
 	position: relative;
 	@include vertical-bp;
 	&__slogan{
@@ -85,6 +125,13 @@ body {
 		font-size: 59.14px;
 		color: #fff;
 		overflow: hidden;
+		display: table-cell;
+		width: 100%;
+		height: 100%;
+		vertical-align: middle;
+		@media (max-width: 991px) {
+			font-size: 39.4px;
+		}
 	}
 	&__btn {
 		@include present-btn;
@@ -100,19 +147,59 @@ body {
 		&-1, &-2 {
 			@include make-md-column(6);
 			position: relative;
+			@media (min-width: 992px) {
+				height: 57px;
+			}
+		}
+		&-1 {
+			@media (max-width: 991px) {
+				margin-bottom: $vertical-bp/2;
+			}
 		}
 	}
 	&__phone-t, &__phone-n, &__address-t, &__address-s {
 		display: block;
 		text-align: center;
 	}
-	/* &__phone, &__address {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		margin: auto;
-		overflow: hidden;
+	/* &__phone:before {
+		content: "<i>123</i>";
 	} */
+	
+	&__ib {
+		display: inline-block;
+		&:last-child {
+			margin-left: 20px;
+		}
+		&:first-child {
+			@media (max-width: 767px) {
+				display: block;
+			}
+		}
+	}
+	&__phone {
+		text-align: center;
+		@media (min-width: 992px) {
+			position: absolute;
+			height: 57px;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+		}
+	}
+	&__address {
+		text-align: center;
+		@media (min-width: 992px) {
+			position: absolute;
+			height: 57px;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+		}
+	}
 	&__phone-t {
 		font-size: 14px;
 		font-weight: bold;
@@ -120,6 +207,11 @@ body {
 	&__phone-n {
 		font-size: 26.97px;
 		font-weight: bold;
+		color: $text-color;
+		&:hover,&:focus {
+			color: lighten($text-color, 30%);
+			text-decoration: none;
+		}
 	}
 	&__address-t {
 		font-size: 14px;
@@ -127,6 +219,18 @@ body {
 	}
 	&__address-s {
 		font-size: 15.5px;
+	}
+	&__picon, &__licon {
+		font-size: 55px;
+		color: #949494;
+		line-height: 57px;
+		opacity: 0.3;
+	}
+	&__picon {
+		@include icon(phone-square);
+	}
+	&__licon {
+		@include icon(map-marker);
 	}
 }
 
@@ -145,6 +249,21 @@ body {
 		@include make-md-column(3);
 		@include make-sm-column(3);
 		text-align: center;
+	}
+	&__icon {
+		width: 54px;
+		height: 51px;
+		display: inline-block;
+		margin-bottom: 34px;
+		@media (max-width: 767px) {
+			margin-bottom: 17px;
+		}
+
+		@for $i from 1 through 8 {
+			&--#{$i} {
+				@include advantages($i)
+			}
+		}
 	}
 	&__subtitle {
 		font-size: 14px;
@@ -181,6 +300,20 @@ body {
 	&__btn {
 		@include present-btn;
 	}
+
+	&__road {
+		height: 250px;
+		width: 100%;
+		background: #000;
+		margin: auto;
+		overflow: hidden;
+	}
+	&__roadline {
+		height: 8px;
+		background: #FFF;
+		width: 100%;
+		margin-top: 100px;
+	}
 }
 
 .brands {
@@ -189,6 +322,28 @@ body {
 	@include vertical-bp;
 	&__title {
 		@include block-title;
+	}
+	&__list {
+		margin: 0;
+		padding: 0;
+		text-align: justify;
+  		line-height: 0;
+  		&:after {
+		  width: 100%;
+		  height: 0px;
+		  visibility: hidden;
+		  overflow: hidden;
+		  content: "";
+		  display: inline-block;
+		}
+	}
+	&__item {
+		list-style-type: none;
+		display: inline-block;
+		text-align: center;
+	}
+	&__name {
+		display: none;
 	}
 }
 
@@ -208,15 +363,47 @@ body {
 	}
 	&__item {
 		list-style-type: none;
-		@include make-md-column(3);
+		@include make-xs-column(6);
+		@include make-sm-column(6);
+		@include make-md-column(3);	
+		&:nth-child(1),	
+		&:nth-child(2),	
+		&:nth-child(3),	
+		&:nth-child(4) {
+			margin-bottom: 45px;
+		}
+		@media (max-width: 991px) {
+			margin-bottom: 45px;
+				&:nth-child(7), &:nth-child(8) {
+				margin-bottom: 0;
+			}
+		}
+	}
+	
+	&__link {
+		display: table;
+		overflow: hidden;
+		position: relative;
+		border-collapse: separate;
+		@media (max-width: 767px) {
+			display: block;
+			height: 160px;
+			@extends .clearfix;
+		}
 	}
 	&__ubtn {
 		position: relative;
 		overflow: hidden;
 		min-height: 45px;
 	}
-	&__btn {
-		@include present-btn;
+
+	&__img {
+		display: inline-block;
+		vertical-align: middle;
+		@media (max-width: 767px) {
+			display: block;
+			margin: 0 auto 22.5px;
+		}
 	}
 	&__name {
 		margin: 0;
@@ -224,20 +411,73 @@ body {
 		font-size: 16px;
 		color: #fff;
 		font-weight: normal;
+		display: inline-block;
+		max-width: 50%;
+		vertical-align: middle;
+		margin-left: 15px;
+		@media (max-width: 767px) {
+			display: block;
+			max-width: inherit;
+			text-align: center;
+			margin: 0;
+		}
 	}
+
+	&__btn {
+		@include present-btn;
+	}
+
 }
 
 .about {
 	overflow: hidden;
+	position: relative;
 	@include vertical-bp;
 	&__title {
 		@include block-title;
+	}
+	&__list {
+		margin: 0;
+		padding: 0;
+
+		margin-bottom: 50px;
+	}
+	&__item {
+		list-style-type: none;
+		&--disabled > .about__text {
+			display: none;
+		}
+		&--disabled {
+			display: none;
+		}
+	}
+	&__subtitle {
+		padding: 0;
+		margin: 0;
+		font-size: 14px;
+		display: block;
+	}
+	&__text {
+		font-size: 14px;
+		margin-bottom: 0;
+		padding: 0;
+	}
+	&__btn {
+		@include present-btn(pink);
 	}
 }
 
 .company {
 	overflow: hidden;
 	@include vertical-bp;
+	
+	&__link {
+		display: block;
+		margin-bottom: 30px;
+	}
+	&__name {
+		display: none;
+	}
 	&__title {
 		@include block-title;
 	}
@@ -246,12 +486,15 @@ body {
 
 	&__col {
 		&-1 {
+			@include make-xs-column(12);
 			@include make-md-column(6);
 		}
 		&-2 {
+			@include make-xs-column(12);
 			@include make-md-column(3);
 		}
 		&-3 {
+			@include make-md-column(12);
 			@include make-md-column(3);
 		}
 	}
@@ -283,7 +526,13 @@ body {
 
 .copiright {
 	overflow: hidden;
-	@include vertical-bp;	
+	@include vertical-bp;
+	&__studio {
+		@extend .pull-left;
+	}	
+	&__metonem {
+		@extend .pull-right;
+	}	
 }
 
 .footer {

@@ -3,8 +3,17 @@ $text-color: #333333;
 $vertical-bp: 45px;
 $present-btn-height: 45px;
 
+@mixin icon($icon){
+	@extend .fa;
+	@extend .fa-#{$icon};
+}
+
+
 @mixin vertical-bp {
-	padding: 45px 0;
+	padding: $vertical-bp 0;
+	@media (max-width: 991px) {
+		padding: $vertical-bp/2 0;
+	}
 }
 @mixin block-title($color: false) {
 	@if ($color == #fff) {
@@ -35,10 +44,10 @@ $present-btn-height: 45px;
 	}
 }
 
-@mixin present-btn() {
+@mixin present-btn($color: false) {
 	height: $present-btn-height;
 	max-width: 250px;
-	background: #fff;
+	
 	font-weight: bold;
 	font-size: 20px;
 	text-transform: uppercase;
@@ -49,13 +58,24 @@ $present-btn-height: 45px;
 	@include center-block;
 	position: absolute;
 	bottom: $vertical-bp;
+	@media (max-width: 991px) {
+		bottom: $vertical-bp/2;
+	}
 	margin: auto;
 	left: 0;
 	right: 0;
-	color: $text-color;
+	
 	&:hover, &:focus{
 		background:$text-color;
 		color: #fff;
 		text-decoration: none;
+	}
+
+	@if ($color == pink) {
+		background: $brand-color;
+		color: #fff;
+	} @else {
+		background: #fff;
+		color: $text-color;
 	}
 }
