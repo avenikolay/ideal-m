@@ -8745,14 +8745,54 @@ body {
   .simple__road {
     height: 250px;
     width: 100%;
-    background: #000;
     margin: auto;
-    overflow: hidden; }
+    overflow: hidden;
+    position: relative;
+    outline: 1px solid red; }
   .simple__roadline {
     height: 8px;
     background: #FFF;
     width: 100%;
-    margin-top: 100px; }
+    position: absolute;
+    top: 78px;
+    transition: width .70s linear; }
+    .simple__roadline--active {
+      background: #b206c8;
+      width: 0; }
+  .simple__car {
+    display: block;
+    width: 124px;
+    height: 78px;
+    background: url(../img/car-single.png) no-repeat;
+    position: absolute;
+    transition: left .70s linear; }
+    .simple__car--rotated {
+      transform: scale(-1, 1); }
+  .simple__roadpoint {
+    background: #FFF;
+    width: 20px;
+    height: 20px;
+    text-outline: 20px;
+    border: 4px solid #efefef;
+    border-radius: 50%;
+    position: absolute;
+    top: 73px; }
+    .simple__roadpoint--active {
+      border-color: #b206c8 !important; }
+  .simple__roadblock {
+    margin-top: 130px;
+    float: left;
+    width: 14.285%;
+    text-align: center;
+    opacity: 0.4;
+    padding: 0 5px; }
+    .simple__roadblock--active {
+      opacity: 1; }
+  .simple__blockname {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    margin-bottom: 25px; }
 
 .brands {
   overflow: hidden;

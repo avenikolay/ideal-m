@@ -44,6 +44,10 @@ gulp.task('jade', function() {
 		.pipe(browserSync.reload({stream:true}));
 });
 
+gulp.task('js', function(){
+	return gulp.src('src/js/**/*.js')
+	.pipe(browserSync.reload({stream:true}));
+})
 
 gulp.task('img', function(){
 	return gulp.src('src/img/**/*')
@@ -75,6 +79,7 @@ gulp.task('watch', ['jade', 'sass', 'wiredep'], function(){
 	})
 	gulp.watch('src/jade/**/*.jade', ['jade']);
 	gulp.watch('src/scss/**/*.scss', ['sass']);
+	gulp.watch('src/js/**/*.js', ['js']);
 	gulp.watch('bower.json', ['wiredep']);
 });
 
