@@ -19,13 +19,13 @@ $present-btn-height: 45px;
 	@if ($color == #fff) {
 		color: $color;
 		&:after {
-			background: $color;
+			background: url(../img/title-white.png) no-repeat;
 		}
 	}
 	@else {
 		color: $text-color;
 		&:after {
-			background: $brand-color;
+			background: url(../img/title.png) no-repeat;
 		}
 	}
 	padding: 0;
@@ -39,7 +39,7 @@ $present-btn-height: 45px;
 		content: "";
 		display: block;
 		height: 4px;
-		width: 83px;
+		width: 293px;
 		margin: 30px auto 0;
 	}
 }

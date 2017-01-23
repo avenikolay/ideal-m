@@ -88,12 +88,13 @@ block brands
 		.container
 			h2.brands__title Наши бренды
 		.container
-			ul.brands__list
-				each item in [{title:"Ahmad Tea",img:"1"},{title:"Baumont Fars",img:"2"},{title:"Bonduelle",img:"3"},{title:"brf",img:"4"},{title:"Coca-Cola",img:"5"},{title:"dmk",img:"6"},{title:"Соки Биола",img:"7"}]
-					li.brands__item
-						a(href="#" title=item.title).brands__link
-							span.brands__name= item.title
-							img(src="img/brands/" + item.img + ".png", alt= item.title)
+			.brands__wrapper
+				ul.brands__list#brands
+					each item in [{title:"Ahmad Tea",img:"1"},{title:"Baumont Fars",img:"2"},{title:"Bonduelle",img:"3"},{title:"brf",img:"4"},{title:"Coca-Cola",img:"5"},{title:"dmk",img:"6"},{title:"Соки Биола",img:"7"},{title:"Раздолье",img:"8"},{title:"Курганский",img:"9"},{title:"Милора",img:"10"},{title:"Lorado",img:"11"},{title:"Spigadi",img:"12"},{title:"Либава",img:"13"},{title:"Maestro de Oliva",img:"14"},{title:"Махеев",img:"15"},{title:"Oldenburger",img:"16"},{title:"Olive Line",img:"17"},{title:"От Мельника",img:"18"},{title:"Johnson",img:"19"},{title:"PastaZARA",img:"20"},{title:"KIWI",img:"21"}]
+						li.brands__item
+							a(href="#" title=item.title).brands__link
+								span.brands__name= item.title
+								img(src="img/brands/" + item.img + ".png", alt= item.title).brands__img
 
 block catalogue
 	section.catalogue
@@ -102,11 +103,13 @@ block catalogue
 		.container
 			.row
 				ul.catalogue__list
-					- var catalogue = [{title:"Молочные продукты",icon:"1"},{title:"Консервы",icon:"2"},{title:"Бакалея",icon:"2"},{title:"Соусы Приправы",icon:"4"},{title:"Еда быстрого приготовления",icon:"5"},{title:"Чай",icon:"6"},{title:"Кондитерские изделия",icon:"7"}, {title:"Бытовая химия",icon:"8"}] 
+					- var catalogue = [{title:"Молочные продукты",icon:"1"},{title:"Консервы",icon:"2"},{title:"Бакалея",icon:"3"},{title:"Соусы Приправы",icon:"4"},{title:"Еда быстрого приготовления",icon:"5"},{title:"Чай",icon:"6"},{title:"Кондитерские изделия",icon:"7"}, {title:"Бытовая химия",icon:"8"}] 
 					each item in catalogue
 						li.catalogue__item
 							a.catalogue__link(href="#")
-								img.catalogue__img(src="img/catalogue/" + item.icon + ".png", alt= item.title)
+								.catalogue__img-wrap
+									span.catalogue__img-hover
+									img.catalogue__img(src="img/catalogue/" + item.icon + ".png", alt= item.title)
 								h3.catalogue__name= item.title
 		.container
 			a(href="#").catalogue__btn Закупиться

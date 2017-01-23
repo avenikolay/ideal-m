@@ -3,6 +3,7 @@ var gulp = require('gulp'),
 	jade = require('gulp-jade'),
 	sass = require('gulp-sass'),
 	prettify = require('gulp-prettify'),
+	autoprefixer = require('gulp-autoprefixer'),
 	browserSync = require('browser-sync'),
 	del = require('del'),
 	strip = require('gulp-strip-comments'),
@@ -30,6 +31,7 @@ gulp.task('server', function(){
 gulp.task('sass', function(){
 	return gulp.src('src/scss/**/*.scss')
 		.pipe(sass()).on('error', log)
+		.pipe(autoprefixer('last 5 versions', '>1%', 'ie 11'))
 		.pipe(gulp.dest('src/css'))
 		.pipe(browserSync.reload({stream:true}));
 });
