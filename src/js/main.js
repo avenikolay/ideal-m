@@ -1,28 +1,59 @@
 $(document).ready(function(){
+	$('.about__tablink').on('click', function(e){
+		e.preventDefault();
+		var item = $(this).closest('.about__tabitem'),
+			contentItems = $('.about__item'),
+			itemPosition = item.index();
+
+		item.addClass('about__tabitem--active').siblings().removeClass('about__tabitem--active');
+		
+		contentItems.eq(itemPosition).addClass('about__item--active').siblings().removeClass('about__item--active');
+	})
+})
+
+$(document).ready(function(){
+	$("#navicon").on('click', function(){
+		$(".nav").toggleClass('nav--minimized');
+	});
+
+	$( window ).resize(function() {
+		$(".nav").removeClass('nav--minimized');
+	})
+})
+$(document).ready(function(){
 	$("#brands").simplyScroll();
 })
 
 $(document).ready(function(){
-	var $firstItem = $('.nav__link').first();
-	var $firstItemPos = $($firstItem).offset();
-	var $firstbtncnvs = $('.firstbtncnvs');
+	function gifAnim(){
+		var $firstItem = $('.nav__link').first();
+		var $firstItemPos = $($firstItem).offset();
+		var $firstbtncnvs = $('.firstbtncnvs');
 
-	// центр по оси Y первого элемента
-	var $firstItemY = $firstItemPos.top + $firstItem.height()/2;
-	// центр по оси X первого элемента
-	var $firstItemX = $firstItemPos.left + $firstItem.width()/2;
+		// центр по оси Y первого элемента
+		var $firstItemY = $firstItemPos.top + $firstItem.height()/2;
+		// центр по оси X первого элемента
+		var $firstItemX = $firstItemPos.left + $firstItem.width()/2;
 
 
 
-	$($firstbtncnvs).css({'top': $firstItemY - $($firstbtncnvs).height()/2, 'left': $firstItemX - $($firstbtncnvs).width()/2});
-	console.log($firstItemY, $firstItemX);
+		$($firstbtncnvs).css({'top': $firstItemY - $($firstbtncnvs).height()/2, 'left': $firstItemX - $($firstbtncnvs).width()/2});
+		console.log($firstItemY, $firstItemX);
 
-	$($firstItem).mouseover(function(e){
-		e.preventDefault;
-		$($firstbtncnvs).toggleClass('firstbtncnvs--none').mouseout(function() {
-		    $(this).toggleClass('firstbtncnvs--none');
-		});
-	});
+		$($firstItem).mouseover(function(e){
+
+			$($firstbtncnvs).toggleClass('firstbtncnvs--none');
+		}).mouseout(function() {
+			    $($firstbtncnvs).toggleClass('firstbtncnvs--none');
+			});
+	}
+
+	gifAnim();
+	$( window ).resize(function() {
+		gifAnim();
+	})
+		
+	
 })
 $(document).ready(function(){
 	

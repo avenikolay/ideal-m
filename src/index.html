@@ -15,10 +15,10 @@
         <div class="container">
           <div class="row">
             <div class="header__col-1">
-              <h1 class="logo"><a href="index.html" title="ideal-m"><img src="../img/logo.png" alt="ideal-m"/></a><span class="logo__text">ideal-m</span></h1>
+              <h1 class="logo"><a href="index.html" title="ideal-m"><img src="img/logo.png" alt="ideal-m"/></a><span class="logo__text">ideal-m</span></h1>
             </div>
             <div class="header__col-2">
-              <nav class="nav">
+              <nav class="nav"><a id="navicon" href="#" class="nav__navicon"></a>
                 <ul class="nav__list">
                   <li class="nav__item"><a href="" class="nav__link">каталог</a></li>
                   <li class="nav__item"><a href="" class="nav__link">услуги</a></li>
@@ -42,9 +42,11 @@
         </div>
       </header>
       <div class="slider">
-        <div class="container-fluid">
-          <h2 class="slider__slogan">У вас есть <strong>магазин</strong>? <br> Закупайтесь у нас!</h2><a href="#" title="закупиться" class="slider__btn">Закупиться</a>
-        </div>
+        <ul class="slider__list">
+          <li class="slider__item"><img src="img/slider/1.jpg" alt="" class="slider__img"/><img src="img/slider/person1.png" alt="" class="slider__person"/>
+            <h2 class="slider__text">У вас крупная гостиница? <br> Мы идеальный партнер!</h2>
+          </li>
+        </ul>
       </div>
       <section class="contacts">
         <div class="container">
@@ -225,34 +227,41 @@
       <section class="about">
         <div class="container">
           <h2 class="about__title">Первые на рынки таджикистана</h2>
+          <ul class="about__tabbuttons">
+            <li class="about__tabitem about__tabitem--active"><a href="#" class="about__tablink">О Компани</a></li>
+            <li class="about__tabitem"><a href="#" class="about__tablink">Наши цели</a></li>
+            <li class="about__tabitem"><a href="#" class="about__tablink">Миссия</a></li>
+            <li class="about__tabitem"><a href="#" class="about__tablink">Партнерам</a></li>
+            <li class="about__tabitem"><a href="#" class="about__tablink">Вакансии</a></li>
+          </ul>
           <ul class="about__list">
-            <li class="about__item">
+            <li class="about__item about__item--active">
               <h3 class="about__subtitle">О Компани</h3>
               <p class="about__text">Компания Таймерс основана в 1997 году, в городе Красноярск. Основным направлением нашей деятельности является дистрибьюция продуктов питания. По видам продукции можно выделить 3 направления, по которым мы работаем: бакалея, кондитерские изделия, колбасная продукция. В рамках этих направлений представлена продукция известных российских и зарубежных производителей: Молочная продукция компании «Назаровское молоко», продукция компании «Орими трэйд» (чай принцесса Канди, Нури, Ява, Гринфилд, Tess).Кондитерские изделия компаний «Рахат»,  «Пензенская кондитерская фабрика», «Продвагон», «Сладонеж», и т.д. ; Колбасная продукция компаний КПК. С 2006 года начал работать филиал компании в г. Абакан (Республика Хакассия). Собственные склады и подъездные пути в Хакассии дают нам возможность качественно обслуживать наших клиентов.</p>
             </li>
-            <li class="about__item about__item--disabled">
+            <li class="about__item">
               <h3 class="about__subtitle">Наши цели</h3>
               <p class="about__text"></p>
             </li>
-            <li class="about__item about__item--disabled">
+            <li class="about__item">
               <h3 class="about__subtitle">Миссия</h3>
               <p class="about__text"></p>
             </li>
-            <li class="about__item about__item--disabled">
+            <li class="about__item">
               <h3 class="about__subtitle">Партнерам</h3>
               <p class="about__text"></p>
             </li>
-            <li class="about__item about__item--disabled">
+            <li class="about__item">
               <h3 class="about__subtitle">Вакансии</h3>
               <p class="about__text"></p>
             </li>
-          </ul><a href="" class="about__btn"> Посмотреть</a>
+          </ul><a href="" class="about__btn"> Работать с нами</a>
         </div>
       </section>
     </div>
     <footer class="footer">
       <div class="company">
-        <div class="container"><a href="#" title="ideal-m" class="company__link"><img src="../img/logo.png" alt="ideal-m" class="company__logo"/><span class="company__name">ideal-m</span></a>
+        <div class="container"><a href="#" title="ideal-m" class="company__link"><img src="img/logo.png" alt="ideal-m" class="company__logo"/><span class="company__name">ideal-m</span></a>
           <div class="row">
             <div class="company__col-1">
               <div class="company__about">О нас</div>

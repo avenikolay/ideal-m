@@ -5,10 +5,11 @@ header.header
 			.header__col-1
 				h1.logo
 					a(href="index.html" title="ideal-m")
-						img(src="../img/logo.png", alt="ideal-m")
+						img(src="img/logo.png", alt="ideal-m")
 					span.logo__text ideal-m
 			.header__col-2
 				nav.nav
+					a.nav__navicon#navicon(href="#")
 					ul.nav__list
 						each val in ['каталог', 'услуги', 'партнеры', 'бренды', 'о нас', 'контакты']
 							li.nav__item
