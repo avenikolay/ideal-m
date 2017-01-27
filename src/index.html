@@ -6,7 +6,9 @@
     <title>Ideal-M</title>
     <!-- bower:css -->
     <!-- endbower -->
+    <!-- build:css css/combined.css -->
     <link rel="stylesheet" href="css/main.css"/>
+    <!-- endbuild-->
   </head>
   <body>
     <div class="wrapper">
@@ -43,8 +45,17 @@
       </header>
       <div class="slider">
         <ul class="slider__list">
-          <li class="slider__item"><img src="img/slider/1.jpg" alt="" class="slider__img"/><img src="img/slider/person1.png" alt="" class="slider__person"/>
+          <li class="slider__item slider__item--active slider__parallax-layer"><img src="img/slider/1.jpg" alt="" class="slider__img"/><img src="img/slider/person1.png" alt="" data-depth="0.40" class="slider__person layer"/>
             <h2 class="slider__text">У вас крупная гостиница? <br> Мы идеальный партнер!</h2>
+          </li>
+          <li class="slider__item slider__parallax-layer"><img src="img/slider/2.jpg" alt="" class="slider__img"/><img src="img/slider/person2.png" alt="" data-depth="0.40" class="slider__person layer"/>
+            <h2 class="slider__text">У вас ресторан? <br> давайте сотруднячать!</h2>
+          </li>
+          <li class="slider__item slider__parallax-layer"><img src="img/slider/3.jpg" alt="" class="slider__img"/><img src="img/slider/person3.png" alt="" data-depth="0.40" class="slider__person layer"/>
+            <h2 class="slider__text">У вас магазин? <br> закупайтесь у нас!</h2>
+          </li>
+          <li class="slider__item slider__parallax-layer"><img src="img/slider/4.jpg" alt="" class="slider__img"/><img src="img/slider/person4.png" alt="" data-depth="0.40" class="slider__person layer"/>
+            <h2 class="slider__text">Открыли кафе? <br> IDEAL-M надежеый партнер!</h2>
           </li>
         </ul>
       </div>
@@ -70,40 +81,40 @@
         <div class="container">
           <h2 class="advantages__title">Наши преимущества</h2>
         </div>
-        <div class="container">
+        <div class="container advantages__container">
           <ul class="advantages__list">
             <div class="row">
-              <li class="advantages__item"><i class="advantages__icon advantages__icon--1"></i>
+              <li class="advantages__item advantages__item--col"><i class="advantages__icon advantages__icon--1"></i>
                 <h3 class="advantages__subtitle">Управление продажами</h3>
                 <p class="advantages__text">Управление во всех каналах сбыта на территории города Душанбе и Республики Таджикистан</p>
               </li>
-              <li class="advantages__item"><i class="advantages__icon advantages__icon--2"></i>
+              <li class="advantages__item advantages__item--col"><i class="advantages__icon advantages__icon--2"></i>
                 <h3 class="advantages__subtitle">Доставка за 24 часа</h3>
                 <p class="advantages__text">Мы обеспечим доставку в течении 24 часов, вне зависимости от расположения торговой точки</p>
               </li>
-              <li class="advantages__item"><i class="advantages__icon advantages__icon--3"></i>
+              <li class="advantages__item advantages__item--col"><i class="advantages__icon advantages__icon--3"></i>
                 <h3 class="advantages__subtitle">Прозрачность</h3>
                 <p class="advantages__text">Мы обеспечим полную информационную  прозрачность</p>
               </li>
-              <li class="advantages__item"><i class="advantages__icon advantages__icon--4"></i>
+              <li class="advantages__item advantages__item--col"><i class="advantages__icon advantages__icon--4"></i>
                 <h3 class="advantages__subtitle">Эффективный маркетинг</h3>
                 <p class="advantages__text">Проведение маркетинговых акций во всех каналах сбыта любой направленности</p>
               </li>
             </div>
             <div class="row">
-              <li class="advantages__item"><i class="advantages__icon advantages__icon--5"></i>
+              <li class="advantages__item advantages__item--col"><i class="advantages__icon advantages__icon--5"></i>
                 <h3 class="advantages__subtitle">Финансовая устойчивость</h3>
                 <p class="advantages__text">Выстроенная система финансового учета</p>
               </li>
-              <li class="advantages__item"><i class="advantages__icon advantages__icon--6"></i>
+              <li class="advantages__item advantages__item--col"><i class="advantages__icon advantages__icon--6"></i>
                 <h3 class="advantages__subtitle">Профессиональная команда</h3>
                 <p class="advantages__text">Сформированные профессиональные команды в продажах и логистике</p>
               </li>
-              <li class="advantages__item"><i class="advantages__icon advantages__icon--7"></i>
+              <li class="advantages__item advantages__item--col"><i class="advantages__icon advantages__icon--7"></i>
                 <h3 class="advantages__subtitle">Грамотная логистика</h3>
                 <p class="advantages__text">Высокий уровень дистрибуции во всех каналах сбыта на всех обслуживаемых территориях</p>
               </li>
-              <li class="advantages__item"><i class="advantages__icon advantages__icon--8"></i>
+              <li class="advantages__item advantages__item--col"><i class="advantages__icon advantages__icon--8"></i>
                 <h3 class="advantages__subtitle">Складские мощности</h3>
                 <p class="advantages__text">Современные склады и складские технологии, обеспечивающие минимальные издержки</p>
               </li>
@@ -127,34 +138,74 @@
             <div class="simple__roadpoint"></div>
             <div class="simple__roadblock simple__roadblock--active">
               <h3 class="simple__blockname">Позвоните нам</h3>
-              <div class="simple__blocktext">Управление во всех каналах сбыта на территории города Душанбе</div>
+              <div class="simple__blocktext">Мы всегда на связи с 8,00 до 18,00</div>
             </div>
             <div class="simple__roadblock">
               <h3 class="simple__blockname">Представитель</h3>
-              <div class="simple__blocktext">Управление во всех каналах сбыта на территории города Душанбе</div>
+              <div class="simple__blocktext">Наш торговый представитель приедет к вам и презентует  наш товар</div>
             </div>
             <div class="simple__roadblock">
               <h3 class="simple__blockname">Заключение договора</h3>
-              <div class="simple__blocktext">Управление во всех каналах сбыта на территории</div>
+              <div class="simple__blocktext">Каждый договор составляется согласованно с Партнером</div>
             </div>
             <div class="simple__roadblock">
               <h3 class="simple__blockname">Оформление заявки</h3>
-              <div class="simple__blocktext">Управление во всех каналах сбыта на территории </div>
+              <div class="simple__blocktext">Заявка оформляется торговым представителем на Вашей территории</div>
             </div>
             <div class="simple__roadblock">
               <h3 class="simple__blockname">Отгрузка товара</h3>
-              <div class="simple__blocktext">Управление во всех каналах сбыта на территории </div>
+              <div class="simple__blocktext">Мы обеспечим доставку в течении 24 часов.</div>
             </div>
             <div class="simple__roadblock">
               <h3 class="simple__blockname">Оплата за товар</h3>
-              <div class="simple__blocktext">Управление во всех каналах сбыта на территории </div>
+              <div class="simple__blocktext">Оплата проходит согласно договору</div>
             </div>
             <div class="simple__roadblock">
               <h3 class="simple__blockname">Бесплтаный мерчендайзинг</h3>
-              <div class="simple__blocktext">Управление во всех каналах сбыта на территории </div>
+              <div class="simple__blocktext">Наш мерчендайзер выкладывает товар так, что он продается сам.</div>
             </div>
-          </div><a href="#" title="стать партнером" class="simple__btn">Стать партнером</a>
+          </div>
         </div>
+        <div class="container simple__mobile">
+          <div class="simple__car-mobile"></div>
+          <div class="simple__road-list">
+            <div class="simple__road-item">
+              <div class="simple__line-mob"></div>
+              <h3 class="simple__blockname">Позвоните нам</h3>
+              <div class="simple__blocktext">Мы всегда на связи с 8:00 до 18:00</div>
+            </div>
+            <div class="simple__road-item">
+              <div class="simple__line-mob"></div>
+              <h3 class="simple__blockname">Представитель</h3>
+              <div class="simple__blocktext">Наш торговый представитель приедет к вам и презентует  наш товар.</div>
+            </div>
+            <div class="simple__road-item">
+              <div class="simple__line-mob"></div>
+              <h3 class="simple__blockname">Заключение договора</h3>
+              <div class="simple__blocktext">Каждый договор составляется согласованно с партнером.</div>
+            </div>
+            <div class="simple__road-item">
+              <div class="simple__line-mob"></div>
+              <h3 class="simple__blockname">Оформление заявки</h3>
+              <div class="simple__blocktext">Заявка оформляется торговым представителем на Вашей территории.</div>
+            </div>
+            <div class="simple__road-item">
+              <div class="simple__line-mob"></div>
+              <h3 class="simple__blockname">Отгрузка товара</h3>
+              <div class="simple__blocktext">Мы обеспечим доставку в течении 24 часов.</div>
+            </div>
+            <div class="simple__road-item">
+              <div class="simple__line-mob"></div>
+              <h3 class="simple__blockname">Оплата за товар</h3>
+              <div class="simple__blocktext">Оплата проходит согласно договору.</div>
+            </div>
+            <div class="simple__road-item">
+              <div class="simple__line-mob"></div>
+              <h3 class="simple__blockname">Бесплтаный мерчендайзинг</h3>
+              <div class="simple__blocktext">Наш мерчендайзер выкладывает товар так, что он продается сам.</div>
+            </div>
+          </div>
+        </div><a href="#" title="стать партнером" class="simple__btn">Стать партнером</a>
       </section>
       <section class="brands">
         <div class="container">
@@ -298,9 +349,13 @@
     </footer>
     <!-- bower:js -->
     <!-- endbower -->
+    <!-- build:js js/combined.js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/slick-carousel/slick/slick.js"></script>
     <script src="bower_components/jquery-simplyscroll/jquery.simplyscroll.min.js"></script>
-    <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+    <script src="bower_components/parallax/deploy/jquery.parallax.min.js"></script>
+    <script src="bower_components/Headhesive.js/dist/headhesive.js"></script>
     <script src="js/main.js"></script>
+    <!-- endbuild-->
   </body>
 </html>

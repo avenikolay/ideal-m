@@ -79,3 +79,36 @@ $present-btn-height: 45px;
 		color: $text-color;
 	}
 }
+
+
+@mixin present-btn-unfixed($color: false) {
+	height: $present-btn-height;
+	max-width: 250px;
+	
+	font-weight: bold;
+	font-size: 20px;
+	text-transform: uppercase;
+	text-align: center;
+	border-radius: 5px;
+	line-height: 20px;
+	padding: 12.5px 0;
+	@include center-block;
+	/* margin-bottom: $vertical-bp;
+	@media (max-width: 991px) {
+		margin-bottom: $vertical-bp/2;
+	} */
+	
+	&:hover, &:focus{
+		background:$text-color;
+		color: #fff;
+		text-decoration: none;
+	}
+
+	@if ($color == pink) {
+		background: $brand-color;
+		color: #fff;
+	} @else {
+		background: #fff;
+		color: $text-color;
+	}
+}

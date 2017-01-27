@@ -116,8 +116,8 @@ gulp.task('build', ['clean', 'img'], function(){
 	var buildImg = gulp.src('src/img/**/*')
 	.pipe(gulp.dest('dist/img'));
 
-	// var buildFonts = gulp.src('src/fonts/**/*')
-	// .pipe(gulp.dest('dist/fonts'));
+	var buildFonts = gulp.src('src/fonts/**/*')
+	.pipe(gulp.dest('dist/fonts'));
 
 	// var buildJs = gulp.src('src/js/**/*')
 	// .pipe(gulp.dest('dist/js'));

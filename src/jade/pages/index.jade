@@ -3,11 +3,26 @@ extends ../layouts/main_layout.jade
 block slider
 	.slider
 		ul.slider__list
-			li.slider__item
+			li.slider__item.slider__item--active.slider__parallax-layer
 				img.slider__img(src="img/slider/1.jpg", alt="")
-				img.slider__person(src="img/slider/person1.png", alt="")
+				img.slider__person.layer(src="img/slider/person1.png", alt="" data-depth="0.40")
 				h2.slider__text У вас крупная гостиница? <br> Мы идеальный партнер!
-			
+			li.slider__item.slider__parallax-layer
+				img.slider__img(src="img/slider/2.jpg", alt="")
+				img.slider__person.layer(src="img/slider/person2.png", alt="" data-depth="0.40")
+				h2.slider__text У вас ресторан? <br> давайте сотруднячать!
+			li.slider__item.slider__parallax-layer
+				img.slider__img(src="img/slider/3.jpg", alt="")
+				img.slider__person.layer(src="img/slider/person3.png", alt="" data-depth="0.40")
+				h2.slider__text У вас магазин? <br> закупайтесь у нас!
+			li.slider__item.slider__parallax-layer
+				img.slider__img(src="img/slider/4.jpg", alt="")
+				img.slider__person.layer(src="img/slider/person4.png", alt="" data-depth="0.40")
+				h2.slider__text Открыли кафе? <br> IDEAL-M надежеый партнер!
+		//- ul.slider__controls
+		//- 	li.slider__button.slider__button--prev Влево
+		//- 	li.slider__button.slider__button--next Вправо
+		//- ul.slider__dots
 			//- h2.slider__slogan У вас есть <strong>магазин</strong>? <br> Закупайтесь у нас!
 			//- a(href="#" title='закупиться').slider__btn Закупиться
 block contacts
@@ -32,27 +47,30 @@ block advantages
 	section.advantages
 		.container
 			h2.advantages__title Наши преимущества
-		.container
+		.container.advantages__container
 			ul.advantages__list
 				- var advantages1 = [{title:"Управление продажами",text:"Управление во всех каналах сбыта на территории города Душанбе и Республики Таджикистан"},{title:"Доставка за 24 часа",text:"Мы обеспечим доставку в течении 24 часов, вне зависимости от расположения торговой точки"}, {title:"Прозрачность",text:"Мы обеспечим полную информационную  прозрачность"},{title:"Эффективный маркетинг",text:"Проведение маркетинговых акций во всех каналах сбыта любой направленности"}]
 				- var advantages2 = [{title:"Финансовая устойчивость",text:"Выстроенная система финансового учета"},{title:"Профессиональная команда",text:"Сформированные профессиональные команды в продажах и логистике"},{title:"Грамотная логистика",text:"Высокий уровень дистрибуции во всех каналах сбыта на всех обслуживаемых территориях"}, {title:"Складские мощности",text:"Современные склады и складские технологии, обеспечивающие минимальные издержки"}]
 				- var i = 1
 				.row
 					each item in advantages1
-						li.advantages__item
+						li.advantages__item.advantages__item--col
 							i(class="advantages__icon advantages__icon--" + i++)
 							h3.advantages__subtitle= item.title
 							p.advantages__text= item.text
 				.row
 					each item in advantages2
-						li.advantages__item
+						li.advantages__item.advantages__item--col
 							i(class="advantages__icon advantages__icon--" + i++)
 							h3.advantages__subtitle= item.title
 							p.advantages__text= item.text
+
 block simple
 	section.simple
 		.container
 			h2.simple__title С нами очень легко
+			- var simple = [{title:"Позвоните нам",text:"Мы всегда на связи с 8:00 до 18:00"}, {title:"Представитель",text:"Наш торговый представитель приедет к вам и презентует  наш товар."}, {title:"Заключение договора",text:"Каждый договор составляется согласованно с партнером."}, {title:"Оформление заявки",text:"Заявка оформляется торговым представителем на Вашей территории."},{title:"Отгрузка товара",text:"Мы обеспечим доставку в течении 24 часов."}, {title:"Оплата за товар",text:"Оплата проходит согласно договору."}, {title:"Бесплтаный мерчендайзинг", text: "Наш мерчендайзер выкладывает товар так, что он продается сам."}]
+
 			.simple__road
 				.simple__car
 				.simple__roadline.simple__roadline--blank
@@ -67,26 +85,35 @@ block simple
 				//- Блоки с текстом
 				.simple__roadblock.simple__roadblock--active
 					h3.simple__blockname Позвоните нам
-					.simple__blocktext Управление во всех каналах сбыта на территории города Душанбе
+					.simple__blocktext Мы всегда на связи с 8,00 до 18,00
 				.simple__roadblock
 					h3.simple__blockname Представитель
-					.simple__blocktext Управление во всех каналах сбыта на территории города Душанбе
+					.simple__blocktext Наш торговый представитель приедет к вам и презентует  наш товар
 				.simple__roadblock
 					h3.simple__blockname Заключение договора
-					.simple__blocktext Управление во всех каналах сбыта на территории
+					.simple__blocktext Каждый договор составляется согласованно с Партнером
 				.simple__roadblock
 					h3.simple__blockname Оформление заявки
-					.simple__blocktext Управление во всех каналах сбыта на территории 
+					.simple__blocktext Заявка оформляется торговым представителем на Вашей территории
 				.simple__roadblock
 					h3.simple__blockname Отгрузка товара
-					.simple__blocktext Управление во всех каналах сбыта на территории 
+					.simple__blocktext Мы обеспечим доставку в течении 24 часов.
 				.simple__roadblock
 					h3.simple__blockname Оплата за товар
-					.simple__blocktext Управление во всех каналах сбыта на территории 
+					.simple__blocktext Оплата проходит согласно договору
 				.simple__roadblock
 					h3.simple__blockname Бесплтаный мерчендайзинг
-					.simple__blocktext Управление во всех каналах сбыта на территории 
-			a(href="#" title='стать партнером').simple__btn Стать партнером
+					.simple__blocktext Наш мерчендайзер выкладывает товар так, что он продается сам.
+		.container.simple__mobile
+			.simple__car-mobile
+			.simple__road-list
+				
+				- each item in simple
+					.simple__road-item
+						.simple__line-mob
+						h3.simple__blockname= item.title
+						.simple__blocktext= item.text
+		a(href="#" title='стать партнером').simple__btn Стать партнером
 
 block brands
 	section.brands
