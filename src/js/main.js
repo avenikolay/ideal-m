@@ -1,6 +1,6 @@
 $(document).ready(function(){
-	$('.simple__road-list').slick({
-  		autoplay: false,
+	$('.simple__road-mob').slick({
+  		autoplay: true,
   		autoplaySpeed: 1000,
   		arrows: false
   	});
@@ -274,17 +274,51 @@ $(document).ready(function(){
 
 
 
-$(document).ready(function(){
+$(document).ready(function(){		
 	$('.about__tablink').on('click', function(e){
 		e.preventDefault();
-		var item = $(this).closest('.about__tabitem'),
-			contentItems = $('.about__item'),
-			itemPosition = item.index();
+		if ($(window).width() > 767) {
+			var item = $(this).closest('.about__tabitem'),
+				contentItems = $('.about__item'),
+				itemPosition = item.index();
 
-		item.addClass('about__tabitem--active').siblings().removeClass('about__tabitem--active');
-		
-		contentItems.eq(itemPosition).addClass('about__item--active').siblings().removeClass('about__item--active');
-	})
+			item.addClass('about__tabitem--active').siblings().removeClass('about__tabitem--active');
+			
+			contentItems.eq(itemPosition).addClass('about__item--active').siblings().removeClass('about__item--active');
+		}
+	});
+
+	$('.about__subtitle').on('click', function(e){
+		e.preventDefault();
+		if ($(window).width() < 768) {
+			var item = $(this).closest('.about__item'),
+				list = $(this).closest('.about__list'),
+				items = list.find('.about__item'),
+				content = item.find('.about__text'),
+				otherContent = list.find('.about__text'),
+				duration = 300;
+
+			//items.removeClass('about__item--active');
+
+			if (!item.hasClass('about__item--active')) {
+				items.removeClass('about__item--active');
+				item.addClass('about__item--active');
+				otherContent.stop(true, true).slideUp(duration);
+				content.stop(true, true).slideDown(duration);
+			} else {
+				content.stop(true, true).slideUp(duration);
+				item.stop(true	).removeClass('about__item--active');
+			}
+			
+		}
+
+	});
+
+	$(window).resize(function() {
+		if ($(window).width() > 767) {
+			$('.about__text').removeAttr('style');
+		}	
+	});
 });
 // мобильное меню
 $(document).ready(function(){

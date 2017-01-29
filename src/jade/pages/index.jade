@@ -105,14 +105,15 @@ block simple
 					h3.simple__blockname Бесплтаный мерчендайзинг
 					.simple__blocktext Наш мерчендайзер выкладывает товар так, что он продается сам.
 		.container.simple__mobile
-			.simple__car-mobile
-			.simple__road-list
-				
+			.simple__car-mob
+			.simple__roadline-mob
+				.simple__roadline-mob-inner
+			.simple__road-mob
 				- each item in simple
-					.simple__road-item
-						.simple__line-mob
-						h3.simple__blockname= item.title
-						.simple__blocktext= item.text
+					.simple__roadblock-mob
+						.simple__roadpoint-mob
+						h3.simple__blockname-mob= item.title
+						.simple__blocktext-mob= item.text
 		a(href="#" title='стать партнером').simple__btn Стать партнером
 
 block brands
@@ -149,7 +150,7 @@ block about
 	section.about
 		.container
 			h2.about__title Первые на рынки таджикистана
-			- var about = [{title:"О Компани",text:"Компания Таймерс основана в 1997 году, в городе Красноярск. Основным направлением нашей деятельности является дистрибьюция продуктов питания. По видам продукции можно выделить 3 направления, по которым мы работаем: бакалея, кондитерские изделия, колбасная продукция. В рамках этих направлений представлена продукция известных российских и зарубежных производителей: Молочная продукция компании «Назаровское молоко», продукция компании «Орими трэйд» (чай принцесса Канди, Нури, Ява, Гринфилд, Tess).Кондитерские изделия компаний «Рахат»,  «Пензенская кондитерская фабрика», «Продвагон», «Сладонеж», и т.д. ; Колбасная продукция компаний КПК. С 2006 года начал работать филиал компании в г. Абакан (Республика Хакассия). Собственные склады и подъездные пути в Хакассии дают нам возможность качественно обслуживать наших клиентов."},{title:"Наши цели",text:""}, {title:"Миссия",text:""},{title:"Партнерам",text:""},{title:"Вакансии",text:""}]
+			- var about = [{title:"О Компани",text:"Компания Таймерс основана в 1997 году, в городе Красноярск. Основным направлением нашей деятельности является дистрибьюция продуктов питания. По видам продукции можно выделить 3 направления, по которым мы работаем: бакалея, кондитерские изделия, колбасная продукция. В рамках этих направлений представлена продукция известных российских и зарубежных производителей: Молочная продукция компании «Назаровское молоко», продукция компании «Орими трэйд» (чай принцесса Канди, Нури, Ява, Гринфилд, Tess).Кондитерские изделия компаний «Рахат»,  «Пензенская кондитерская фабрика», «Продвагон», «Сладонеж», и т.д. ; Колбасная продукция компаний КПК. С 2006 года начал работать филиал компании в г. Абакан (Республика Хакассия). Собственные склады и подъездные пути в Хакассии дают нам возможность качественно обслуживать наших клиентов."},{title:"Наши цели",text:" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet ex quo libero veniam adipisci accusamus rem sapiente temporibus accusantium odit ratione cupiditate atque laborum perspiciatis, quidem commodi assumenda dolore ipsa."}, {title:"Миссия",text:" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci explicabo, vel laudantium dicta iure. Eligendi quia id facilis tempora temporibus tempore veniam magni accusamus debitis perferendis distinctio sed, voluptas qui?"},{title:"Партнерам",text:" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, dolorem placeat dolor voluptatem earum dolores rem eveniet quia. Consequuntur quia, enim adipisci voluptatum dicta illum, ipsa quis voluptas. Consequuntur, temporibus!"},{title:"Вакансии",text:" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta earum aperiam quo fugiat rem eveniet deleniti velit, ducimus in exercitationem eum harum consequuntur expedita necessitatibus voluptatem inventore assumenda. Mollitia, nulla."}]
 			ul.about__tabbuttons
 				each item, index in about
 					-if (index == 0) 
