@@ -1,0 +1,16 @@
+section.catalogue
+	.container
+		h2.catalogue__title Каталог продукции
+	.container
+		.row
+			ul.catalogue__list
+				- var catalogue = [{title:"Молочные продукты",icon:"1"},{title:"Консервы",icon:"2"},{title:"Бакалея",icon:"3"},{title:"Соусы Приправы",icon:"4"},{title:"Еда быстрого приготовления",icon:"5"},{title:"Чай",icon:"6"},{title:"Кондитерские изделия",icon:"7"}, {title:"Бытовая химия",icon:"8"}] 
+				each item in catalogue
+					li.catalogue__item
+						a.catalogue__link(href="#")
+							.catalogue__img-wrap
+								span.catalogue__img-hover
+								img.catalogue__img(src="img/catalogue/" + item.icon + ".png", alt= item.title)
+							h3.catalogue__name= item.title
+	.container
+		a(href="#").catalogue__btn Закупиться

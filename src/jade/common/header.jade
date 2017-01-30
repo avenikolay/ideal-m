@@ -1,3 +1,4 @@
+block pageName
 .firstbtncnvs.firstbtncnvs--none
 header.header
 	.container
@@ -11,9 +12,14 @@ header.header
 				nav.nav
 					a.nav__navicon#navicon(href="#")
 					ul.nav__list
-						each val in ['каталог', 'услуги', 'партнеры', 'бренды', 'о нас', 'контакты']
-							li.nav__item
-								a(href="").nav__link= val
+						each item in [{title:'каталог', pageName:'ctalogue'}, {title:'услуги', pageName:'services'}, {title:'партнерам', pageName:'partners'}, {title:'бренды', pageName:'brands'},{title:'о нас', pageName:'about'},{title:'контакты', pageName:'contacts'}]
+
+							- if (item.pageName == pageName)
+								li.nav__item.nav__item--current
+									a(href=item.pageName + ".html").nav__link= item.title
+							- else 
+								li.nav__item
+									a(href=item.pageName + ".html").nav__link= item.title
 			.header__col-3
 				.socials
 					ul.socials__list

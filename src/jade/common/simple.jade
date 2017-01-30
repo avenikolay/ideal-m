@@ -1,0 +1,34 @@
+section.simple
+	.container
+		h2.simple__title С нами очень легко
+	.container
+		- var simple = [{title:"Позвоните нам",text:"Мы всегда на связи с 8:00 до 18:00"}, {title:"Представитель",text:"Наш торговый представитель приедет к вам и презентует  наш товар."}, {title:"Заключение договора",text:"Каждый договор составляется согласованно с партнером."}, {title:"Оформление заявки",text:"Заявка оформляется торговым представителем на Вашей территории."},{title:"Отгрузка товара",text:"Мы обеспечим доставку в течении 24 часов."}, {title:"Оплата за товар",text:"Оплата проходит согласно договору."}, {title:"Бесплтаный мерчендайзинг", text: "Наш мерчендайзер выкладывает товар так, что он продается сам."}]
+
+		.simple__road
+			.simple__car
+			.simple__roadline.simple__roadline--blank
+			.simple__roadline.simple__roadline--active
+			.simple__roadpoint.simple__roadpoint--active
+			.simple__roadpoint
+			.simple__roadpoint
+			.simple__roadpoint
+			.simple__roadpoint
+			.simple__roadpoint
+			.simple__roadpoint
+			//- Блоки с текстом
+			- each item in simple
+				.simple__roadblock
+					h3.simple__blockname= item.title
+					.simple__blocktext= item.text
+
+	.container.simple__mob
+		.simple__car-mob
+		.simple__roadline-mob
+			.simple__roadline-mob-inner
+		.simple__road-mob
+			- each item in simple
+				.simple__roadblock-mob
+					.simple__roadpoint-mob
+					h3.simple__blockname-mob= item.title
+					.simple__blocktext-mob= item.text
+	a(href="#" title='стать партнером').simple__btn Стать партнером

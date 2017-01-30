@@ -1,4 +1,20 @@
 $(document).ready(function(){
+
+	var overlayOn = function()
+	{
+	$( '<div id="imagelightbox-overlay"></div>' ).appendTo( 'body' );
+	},
+	overlayOff = function()
+	{
+	$( '#imagelightbox-overlay' ).remove();
+	};
+	$('.partners__gallery-link').imageLightbox({
+			onStart: 	 function() { overlayOn(); },
+			onEnd:	 	 function() { overlayOff();}
+		});
+});
+
+$(document).ready(function(){
 	$('.simple__road-mob').slick({
   		autoplay: true,
   		autoplaySpeed: 1000,
@@ -99,18 +115,8 @@ $(document).ready(function(){
 		/*}*/
 	}
 	stickyMenu ();
-	/*$(window).resize(function(){
-		stickyMenu ();
-	});*/
 });
-// параллах для слайдера
-$(document).ready(function(){
-	$scene = $('.slider__parallax-layer').parallax({
-		calibrateY: false,
-		limitY: false,
-		scalarY: 0	
-	});
-});
+
 
 var slider = (function(){
 	var flag = true,

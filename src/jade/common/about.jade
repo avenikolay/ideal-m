@@ -1,0 +1,23 @@
+section.about
+	.container
+		h2.about__title Первые на рынки таджикистана
+		- var about = [{title:"О Компани",text:"Компания Таймерс основана в 1997 году, в городе Красноярск. Основным направлением нашей деятельности является дистрибьюция продуктов питания. По видам продукции можно выделить 3 направления, по которым мы работаем: бакалея, кондитерские изделия, колбасная продукция. В рамках этих направлений представлена продукция известных российских и зарубежных производителей: Молочная продукция компании «Назаровское молоко», продукция компании «Орими трэйд» (чай принцесса Канди, Нури, Ява, Гринфилд, Tess).Кондитерские изделия компаний «Рахат»,  «Пензенская кондитерская фабрика», «Продвагон», «Сладонеж», и т.д. ; Колбасная продукция компаний КПК. С 2006 года начал работать филиал компании в г. Абакан (Республика Хакассия). Собственные склады и подъездные пути в Хакассии дают нам возможность качественно обслуживать наших клиентов."},{title:"Наши цели",text:" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet ex quo libero veniam adipisci accusamus rem sapiente temporibus accusantium odit ratione cupiditate atque laborum perspiciatis, quidem commodi assumenda dolore ipsa."}, {title:"Миссия",text:" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci explicabo, vel laudantium dicta iure. Eligendi quia id facilis tempora temporibus tempore veniam magni accusamus debitis perferendis distinctio sed, voluptas qui?"},{title:"Партнерам",text:" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, dolorem placeat dolor voluptatem earum dolores rem eveniet quia. Consequuntur quia, enim adipisci voluptatum dicta illum, ipsa quis voluptas. Consequuntur, temporibus!"},{title:"Вакансии",text:" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta earum aperiam quo fugiat rem eveniet deleniti velit, ducimus in exercitationem eum harum consequuntur expedita necessitatibus voluptatem inventore assumenda. Mollitia, nulla."}]
+		ul.about__tabbuttons
+			each item, index in about
+				-if (index == 0) 
+					li.about__tabitem.about__tabitem--active
+						a(href="#").about__tablink= item.title
+				- else
+					li.about__tabitem
+						a(href="#").about__tablink= item.title
+		ul.about__list
+			each item, index in about
+				- if (index == 0)
+					li.about__item.about__item--active
+						h3.about__subtitle= item.title
+						p.about__text= item.text
+				- else 
+					li.about__item
+						h3.about__subtitle= item.title
+						p.about__text= item.text
+		a(href="").about__btn  Работать с нами

@@ -1,172 +1,25 @@
+block pageName
+	- var pageName = 'index'
+
 extends ../layouts/main_layout.jade
 
 block slider
-	.slider
-		ul.slider__list
-			li.slider__item.slider__item--active.slider__parallax-layer
-				img.slider__img(src="img/slider/1.jpg", alt="")
-				img.slider__person.layer(src="img/slider/person1.png", alt="" data-depth="0.40")
-				h2.slider__text У вас крупная гостиница? <br> Мы идеальный партнер!
-			li.slider__item.slider__parallax-layer
-				img.slider__img(src="img/slider/2.jpg", alt="")
-				img.slider__person.layer(src="img/slider/person2.png", alt="" data-depth="0.40")
-				h2.slider__text У вас ресторан? <br> давайте сотруднячать!
-			li.slider__item.slider__parallax-layer
-				img.slider__img(src="img/slider/3.jpg", alt="")
-				img.slider__person.layer(src="img/slider/person3.png", alt="" data-depth="0.40")
-				h2.slider__text У вас магазин? <br> закупайтесь у нас!
-			li.slider__item.slider__parallax-layer
-				img.slider__img(src="img/slider/4.jpg", alt="")
-				img.slider__person.layer(src="img/slider/person4.png", alt="" data-depth="0.40")
-				h2.slider__text Открыли кафе? <br> IDEAL-M надежеый партнер!
-		//- ul.slider__controls
-		//- 	li.slider__button.slider__button--prev Влево
-		//- 	li.slider__button.slider__button--next Вправо
-		//- ul.slider__dots
-			//- h2.slider__slogan У вас есть <strong>магазин</strong>? <br> Закупайтесь у нас!
-			//- a(href="#" title='закупиться').slider__btn Закупиться
+	include ../common/slider.jade
+
 block contacts
-	section.contacts
-		.container
-			.row
-				.contacts__col-1
-					.contacts__phone
-						.contacts__ib
-							i.contacts__picon
-						.contacts__ib
-							span.contacts__phone-t Вы можете связаться с нами по телефону
-							a(href="tel:99244 6250077").contacts__phone-n +992 44 625 0077
-				.contacts__col-2
-					.contacts__address
-						.contacts__ib
-							i.contacts__licon
-						.contacts__ib
-							span.contacts__address-t Приехать к нам в офис по адресу:
-							span.contacts__address-s Ул. им. Титова дом 30/2, кв 32
+	include ../common/contacts.jade
+	
 block advantages
-	section.advantages
-		.container
-			h2.advantages__title Наши преимущества
-		.container.advantages__container
-			ul.advantages__list
-				- var advantages1 = [{title:"Управление продажами",text:"Управление во всех каналах сбыта на территории города Душанбе и Республики Таджикистан"},{title:"Доставка за 24 часа",text:"Мы обеспечим доставку в течении 24 часов, вне зависимости от расположения торговой точки"}, {title:"Прозрачность",text:"Мы обеспечим полную информационную  прозрачность"},{title:"Эффективный маркетинг",text:"Проведение маркетинговых акций во всех каналах сбыта любой направленности"}]
-				- var advantages2 = [{title:"Финансовая устойчивость",text:"Выстроенная система финансового учета"},{title:"Профессиональная команда",text:"Сформированные профессиональные команды в продажах и логистике"},{title:"Грамотная логистика",text:"Высокий уровень дистрибуции во всех каналах сбыта на всех обслуживаемых территориях"}, {title:"Складские мощности",text:"Современные склады и складские технологии, обеспечивающие минимальные издержки"}]
-				- var i = 1
-				.row
-					each item in advantages1
-						li.advantages__item.advantages__item--col
-							i(class="advantages__icon advantages__icon--" + i++)
-							h3.advantages__subtitle= item.title
-							p.advantages__text= item.text
-				.row
-					each item in advantages2
-						li.advantages__item.advantages__item--col
-							i(class="advantages__icon advantages__icon--" + i++)
-							h3.advantages__subtitle= item.title
-							p.advantages__text= item.text
+	include ../common/advantages.jade
 
 block simple
-	section.simple
-		.container
-			h2.simple__title С нами очень легко
-			- var simple = [{title:"Позвоните нам",text:"Мы всегда на связи с 8:00 до 18:00"}, {title:"Представитель",text:"Наш торговый представитель приедет к вам и презентует  наш товар."}, {title:"Заключение договора",text:"Каждый договор составляется согласованно с партнером."}, {title:"Оформление заявки",text:"Заявка оформляется торговым представителем на Вашей территории."},{title:"Отгрузка товара",text:"Мы обеспечим доставку в течении 24 часов."}, {title:"Оплата за товар",text:"Оплата проходит согласно договору."}, {title:"Бесплтаный мерчендайзинг", text: "Наш мерчендайзер выкладывает товар так, что он продается сам."}]
-
-			.simple__road
-				.simple__car
-				.simple__roadline.simple__roadline--blank
-				.simple__roadline.simple__roadline--active
-				.simple__roadpoint.simple__roadpoint--active
-				.simple__roadpoint
-				.simple__roadpoint
-				.simple__roadpoint
-				.simple__roadpoint
-				.simple__roadpoint
-				.simple__roadpoint
-				//- Блоки с текстом
-				.simple__roadblock.simple__roadblock--active
-					h3.simple__blockname Позвоните нам
-					.simple__blocktext Мы всегда на связи с 8,00 до 18,00
-				.simple__roadblock
-					h3.simple__blockname Представитель
-					.simple__blocktext Наш торговый представитель приедет к вам и презентует  наш товар
-				.simple__roadblock
-					h3.simple__blockname Заключение договора
-					.simple__blocktext Каждый договор составляется согласованно с Партнером
-				.simple__roadblock
-					h3.simple__blockname Оформление заявки
-					.simple__blocktext Заявка оформляется торговым представителем на Вашей территории
-				.simple__roadblock
-					h3.simple__blockname Отгрузка товара
-					.simple__blocktext Мы обеспечим доставку в течении 24 часов.
-				.simple__roadblock
-					h3.simple__blockname Оплата за товар
-					.simple__blocktext Оплата проходит согласно договору
-				.simple__roadblock
-					h3.simple__blockname Бесплтаный мерчендайзинг
-					.simple__blocktext Наш мерчендайзер выкладывает товар так, что он продается сам.
-		.container.simple__mobile
-			.simple__car-mob
-			.simple__roadline-mob
-				.simple__roadline-mob-inner
-			.simple__road-mob
-				- each item in simple
-					.simple__roadblock-mob
-						.simple__roadpoint-mob
-						h3.simple__blockname-mob= item.title
-						.simple__blocktext-mob= item.text
-		a(href="#" title='стать партнером').simple__btn Стать партнером
+	include ../common/simple.jade
 
 block brands
-	section.brands
-		.container
-			h2.brands__title Наши бренды
-		.container
-			.brands__wrapper
-				ul.brands__list#brands
-					each item in [{title:"Ahmad Tea",img:"1"},{title:"Baumont Fars",img:"2"},{title:"Bonduelle",img:"3"},{title:"brf",img:"4"},{title:"Coca-Cola",img:"5"},{title:"dmk",img:"6"},{title:"Соки Биола",img:"7"},{title:"Раздолье",img:"8"},{title:"Курганский",img:"9"},{title:"Милора",img:"10"},{title:"Lorado",img:"11"},{title:"Spigadi",img:"12"},{title:"Либава",img:"13"},{title:"Maestro de Oliva",img:"14"},{title:"Махеев",img:"15"},{title:"Oldenburger",img:"16"},{title:"Olive Line",img:"17"},{title:"От Мельника",img:"18"},{title:"Johnson",img:"19"},{title:"PastaZARA",img:"20"},{title:"KIWI",img:"21"}]
-						li.brands__item
-							a(href="#" title=item.title).brands__link
-								span.brands__name= item.title
-								img(src="img/brands/" + item.img + ".png", alt= item.title).brands__img
+	include ../common/brands.jade
 
 block catalogue
-	section.catalogue
-		.container
-			h2.catalogue__title Каталог продукции
-		.container
-			.row
-				ul.catalogue__list
-					- var catalogue = [{title:"Молочные продукты",icon:"1"},{title:"Консервы",icon:"2"},{title:"Бакалея",icon:"3"},{title:"Соусы Приправы",icon:"4"},{title:"Еда быстрого приготовления",icon:"5"},{title:"Чай",icon:"6"},{title:"Кондитерские изделия",icon:"7"}, {title:"Бытовая химия",icon:"8"}] 
-					each item in catalogue
-						li.catalogue__item
-							a.catalogue__link(href="#")
-								.catalogue__img-wrap
-									span.catalogue__img-hover
-									img.catalogue__img(src="img/catalogue/" + item.icon + ".png", alt= item.title)
-								h3.catalogue__name= item.title
-		.container
-			a(href="#").catalogue__btn Закупиться
+	include ../common/catalogue.jade
+
 block about
-	section.about
-		.container
-			h2.about__title Первые на рынки таджикистана
-			- var about = [{title:"О Компани",text:"Компания Таймерс основана в 1997 году, в городе Красноярск. Основным направлением нашей деятельности является дистрибьюция продуктов питания. По видам продукции можно выделить 3 направления, по которым мы работаем: бакалея, кондитерские изделия, колбасная продукция. В рамках этих направлений представлена продукция известных российских и зарубежных производителей: Молочная продукция компании «Назаровское молоко», продукция компании «Орими трэйд» (чай принцесса Канди, Нури, Ява, Гринфилд, Tess).Кондитерские изделия компаний «Рахат»,  «Пензенская кондитерская фабрика», «Продвагон», «Сладонеж», и т.д. ; Колбасная продукция компаний КПК. С 2006 года начал работать филиал компании в г. Абакан (Республика Хакассия). Собственные склады и подъездные пути в Хакассии дают нам возможность качественно обслуживать наших клиентов."},{title:"Наши цели",text:" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet ex quo libero veniam adipisci accusamus rem sapiente temporibus accusantium odit ratione cupiditate atque laborum perspiciatis, quidem commodi assumenda dolore ipsa."}, {title:"Миссия",text:" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci explicabo, vel laudantium dicta iure. Eligendi quia id facilis tempora temporibus tempore veniam magni accusamus debitis perferendis distinctio sed, voluptas qui?"},{title:"Партнерам",text:" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, dolorem placeat dolor voluptatem earum dolores rem eveniet quia. Consequuntur quia, enim adipisci voluptatum dicta illum, ipsa quis voluptas. Consequuntur, temporibus!"},{title:"Вакансии",text:" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta earum aperiam quo fugiat rem eveniet deleniti velit, ducimus in exercitationem eum harum consequuntur expedita necessitatibus voluptatem inventore assumenda. Mollitia, nulla."}]
-			ul.about__tabbuttons
-				each item, index in about
-					-if (index == 0) 
-						li.about__tabitem.about__tabitem--active
-							a(href="#").about__tablink= item.title
-					- else
-						li.about__tabitem
-							a(href="#").about__tablink= item.title
-			ul.about__list
-				each item, index in about
-					- if (index == 0)
-						li.about__item.about__item--active
-							h3.about__subtitle= item.title
-							p.about__text= item.text
-					- else 
-						li.about__item
-							h3.about__subtitle= item.title
-							p.about__text= item.text
-			a(href="").about__btn  Работать с нами
+	include ../common/about.jade

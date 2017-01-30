@@ -1,0 +1,20 @@
+section.advantages
+	.container
+		h2.advantages__title Наши преимущества
+	.container.advantages__container
+		ul.advantages__list
+			- var advantages1 = [{title:"Управление продажами",text:"Управление во всех каналах сбыта на территории города Душанбе и Республики Таджикистан"},{title:"Доставка за 24 часа",text:"Мы обеспечим доставку в течении 24 часов, вне зависимости от расположения торговой точки"}, {title:"Прозрачность",text:"Мы обеспечим полную информационную  прозрачность"},{title:"Эффективный маркетинг",text:"Проведение маркетинговых акций во всех каналах сбыта любой направленности"}]
+			- var advantages2 = [{title:"Финансовая устойчивость",text:"Выстроенная система финансового учета"},{title:"Профессиональная команда",text:"Сформированные профессиональные команды в продажах и логистике"},{title:"Грамотная логистика",text:"Высокий уровень дистрибуции во всех каналах сбыта на всех обслуживаемых территориях"}, {title:"Складские мощности",text:"Современные склады и складские технологии, обеспечивающие минимальные издержки"}]
+			- var i = 1
+			.row
+				each item in advantages1
+					li.advantages__item.advantages__item--col
+						i(class="advantages__icon advantages__icon--" + i++)
+						h3.advantages__subtitle= item.title
+						p.advantages__text= item.text
+			.row
+				each item in advantages2
+					li.advantages__item.advantages__item--col
+						i(class="advantages__icon advantages__icon--" + i++)
+						h3.advantages__subtitle= item.title
+						p.advantages__text= item.text
