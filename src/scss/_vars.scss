@@ -8,16 +8,26 @@ $present-btn-height: 45px;
 	@extend .fa-#{$icon};
 }
 
-
+@mixin subtitle {
+	font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    margin-top: 0;
+}
 @mixin text(){
 	color: #333;
 	font-size: 14px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	margin-top: 0;
 	&:last-child {
 		margin-bottom: 0;
 	}
 }
+@mixin list() {
+	margin-bottom: 10px;
+	padding-left: 40px;
+}
+
 @mixin vertical-bp {
 	padding: $vertical-bp 0;
 	@media (max-width: 991px) {

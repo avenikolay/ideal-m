@@ -1336,7 +1336,7 @@ body
 
     &__gallery {
         padding: 0;
-        margin: 0;
+        margin: 0 -10px;
     }
     &__gallery-item {
         list-style-type: none;
@@ -1352,8 +1352,124 @@ body
     }
 
 }
+
+
 .simple-text {
     @include text();
+}
+
+.aboutus {
+    &__care {
+        position: relative;
+        &-label {
+            background:url(../img/care-bg.png) no-repeat;
+            background-size: contain;
+            width: 491px;
+            height: 196px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            @media (max-width: 991px) {
+                width:327.333px;
+                height: 130.666px;
+            }
+            @media (max-width: 767px) {
+                display: none;
+            }
+        }
+        @include vertical-bp;
+        background: $brand-color;
+               
+    }
+    &__care-cntnr  {
+        min-height: 350px;
+        height: 1px;
+        text-align: right;
+        &:after {
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+            content: "";
+        } 
+    }
+    &__care-txt {
+        font-size: 30.72px;
+        text-transform: uppercase;
+        margin: 0;
+        padding: 0;
+        color: #fff;
+        font-style: italic;
+        width: 55%;
+        text-align: center;
+
+        display: inline-block;
+        vertical-align: middle;
+        @media (max-width: 767px) {
+           width: 99%;
+           padding: 0 45px;
+        }
+    }
+
+    &__title {
+        @include block-title;
+    }
+}
+
+.c-gallery {
+    padding: 0;
+        margin: 0 -10px;
+    &__item {
+        list-style-type: none;
+        float: left;
+        width: 50%;
+        padding: 10px;
+        /* &:nth-child(3n+1) {
+            padding-left: 0;
+        } */
+    }
+    &__img {
+        width: 100%;
+    }
+}
+.article {
+    @include vertical-bp;
+
+    h2 {
+        @include subtitle;
+    }
+    p {
+        @include text;
+    }
+    ul {
+        @include list;
+    }
+    &__part {
+        margin-bottom: 30px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+.future {
+    @include vertical-bp;
+    &__title {
+        @include block-title;
+    }
+    &__list {
+        @include list();
+    }
+}
+.important {
+    @include vertical-bp;
+    background: $brand-color;
+    &__title {
+        @include block-title($color: #fff);
+    }
+    &__text {
+        @include text();
+        color: #fff;
+    }
 }
 
 .company
@@ -1458,10 +1574,10 @@ body
 
 
     cursor: pointer;
-    box-shadow: 0 0 3.125em rgba( 0, 0, 0, .75 );
+    //box-shadow: 0 0 3.125em rgba( 0, 0, 0, .75 );
 }
 #imagelightbox-overlay {
-    background-color: rgba( 255, 255, 255, .9 );
+    background-color: rgba( 0, 0, 0, .75);
     position: fixed;
     z-index: 9998;
     top: 0;

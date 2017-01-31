@@ -12,6 +12,10 @@ $(document).ready(function(){
 			onStart: 	 function() { overlayOn(); },
 			onEnd:	 	 function() { overlayOff();}
 		});
+	$('.c-gallery__link').imageLightbox({
+			onStart: 	 function() { overlayOn(); },
+			onEnd:	 	 function() { overlayOff();}
+		});
 });
 
 $(document).ready(function(){
@@ -345,7 +349,7 @@ $(document).ready(function(){
 
 
 $(document).ready(function(){
-	$("#brands").simplyScroll();
+	$(".brands__list").simplyScroll();
 });
 
 $(document).ready(function(){

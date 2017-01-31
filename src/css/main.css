@@ -9629,7 +9629,7 @@ body {
               filter: grayscale(0); }
   .partners__gallery {
     padding: 0;
-    margin: 0; }
+    margin: 0 -10px; }
   .partners__gallery-item {
     list-style-type: none;
     float: left;
@@ -9644,10 +9644,175 @@ body {
 .simple-text {
   color: #333;
   font-size: 14px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   margin-top: 0; }
   .simple-text:last-child {
     margin-bottom: 0; }
+
+.aboutus__care {
+  position: relative;
+  padding: 45px 0;
+  background: #b206c8; }
+  .aboutus__care-label {
+    background: url(../img/care-bg.png) no-repeat;
+    background-size: contain;
+    width: 491px;
+    height: 196px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto; }
+    @media (max-width: 991px) {
+      .aboutus__care-label {
+        width: 327.333px;
+        height: 130.666px; } }
+    @media (max-width: 767px) {
+      .aboutus__care-label {
+        display: none; } }
+  @media (max-width: 991px) {
+    .aboutus__care {
+      padding: 22.5px 0; } }
+
+.aboutus__care-cntnr {
+  min-height: 350px;
+  height: 1px;
+  text-align: right; }
+  .aboutus__care-cntnr:after {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    content: ""; }
+
+.aboutus__care-txt {
+  font-size: 30.72px;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-style: italic;
+  width: 55%;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle; }
+  @media (max-width: 767px) {
+    .aboutus__care-txt {
+      width: 99%;
+      padding: 0 45px; } }
+
+.aboutus__title {
+  color: #333333;
+  padding: 0;
+  margin: 0 0 40px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 20px; }
+  .aboutus__title:after {
+    background: url(../img/title.png) no-repeat; }
+  .aboutus__title:after {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 293px;
+    margin: 30px auto 0; }
+
+.c-gallery {
+  padding: 0;
+  margin: 0 -10px; }
+  .c-gallery__item {
+    list-style-type: none;
+    float: left;
+    width: 50%;
+    padding: 10px;
+    /* &:nth-child(3n+1) {
+            padding-left: 0;
+        } */ }
+  .c-gallery__img {
+    width: 100%; }
+
+.article {
+  padding: 45px 0; }
+  @media (max-width: 991px) {
+    .article {
+      padding: 22.5px 0; } }
+  .article h2 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    margin-top: 0; }
+  .article p {
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-top: 0; }
+    .article p:last-child {
+      margin-bottom: 0; }
+  .article ul {
+    margin-bottom: 10px;
+    padding-left: 40px; }
+  .article__part {
+    margin-bottom: 30px; }
+    .article__part:last-child {
+      margin-bottom: 0; }
+
+.future {
+  padding: 45px 0; }
+  @media (max-width: 991px) {
+    .future {
+      padding: 22.5px 0; } }
+  .future__title {
+    color: #333333;
+    padding: 0;
+    margin: 0 0 40px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 20px; }
+    .future__title:after {
+      background: url(../img/title.png) no-repeat; }
+    .future__title:after {
+      content: "";
+      display: block;
+      height: 4px;
+      width: 293px;
+      margin: 30px auto 0; }
+  .future__list {
+    margin-bottom: 10px;
+    padding-left: 40px; }
+
+.important {
+  padding: 45px 0;
+  background: #b206c8; }
+  @media (max-width: 991px) {
+    .important {
+      padding: 22.5px 0; } }
+  .important__title {
+    color: #fff;
+    padding: 0;
+    margin: 0 0 40px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 20px; }
+    .important__title:after {
+      background: url(../img/title-white.png) no-repeat; }
+    .important__title:after {
+      content: "";
+      display: block;
+      height: 4px;
+      width: 293px;
+      margin: 30px auto 0; }
+  .important__text {
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-top: 0;
+    color: #fff; }
+    .important__text:last-child {
+      margin-bottom: 0; }
 
 .company {
   overflow: hidden;
@@ -9760,11 +9925,10 @@ body {
   z-index: 9999;
   -ms-touch-action: none;
   touch-action: none;
-  cursor: pointer;
-  box-shadow: 0 0 3.125em rgba(0, 0, 0, 0.75); }
+  cursor: pointer; }
 
 #imagelightbox-overlay {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(0, 0, 0, 0.75);
   position: fixed;
   z-index: 9998;
   top: 0;

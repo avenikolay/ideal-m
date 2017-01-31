@@ -1,0 +1,7 @@
+.brands__wrapper
+	ul.brands__list
+		each item in [{title:"Ahmad Tea",img:"1"},{title:"Baumont Fars",img:"2"},{title:"Bonduelle",img:"3"},{title:"brf",img:"4"},{title:"Coca-Cola",img:"5"},{title:"dmk",img:"6"},{title:"Соки Биола",img:"7"},{title:"Раздолье",img:"8"},{title:"Курганский",img:"9"},{title:"Милора",img:"10"},{title:"Lorado",img:"11"},{title:"Spigadi",img:"12"},{title:"Либава",img:"13"},{title:"Maestro de Oliva",img:"14"},{title:"Махеев",img:"15"},{title:"Oldenburger",img:"16"},{title:"Olive Line",img:"17"},{title:"От Мельника",img:"18"},{title:"Johnson",img:"19"},{title:"PastaZARA",img:"20"},{title:"KIWI",img:"21"}]
+			li.brands__item
+				a(href="#" title=item.title).brands__link
+					span.brands__name= item.title
+					img(src="img/brands/" + item.img + ".png", alt= item.title).brands__img
