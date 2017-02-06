@@ -3,10 +3,23 @@ $text-color: #333333;
 $vertical-bp: 45px;
 $present-btn-height: 45px;
 
-@mixin icon($icon){
+@mixin icon($name, $size: false) {
 	@extend .fa;
-	@extend .fa-#{$icon};
+	@extend .fa-#{$name};
+	@if ($size != false) {
+		font-size: #{$size}px;
+	}
 }
+
+@mixin vertical {
+	&:after {
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        content: "";
+    }
+}
+
 
 @mixin subtitle {
 	font-size: 14px;

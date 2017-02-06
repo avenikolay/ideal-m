@@ -1,0 +1,64 @@
+section.products
+	.container
+		h1.products__title Каталог продукции
+	.container
+		.row
+			.col-md-4.col-sm-5.hidden-xs
+				ul.products__catlist
+					li.products__catitem.products__catitem--active
+						i.products__caticon.products__caticon--1
+						span.products__cattext Консервы
+					li.products__catitem
+						i.products__caticon.products__caticon--2
+						span.products__cattext  Чай
+					li.products__catitem
+						i.products__caticon.products__caticon--3
+						span.products__cattext  Соусы / приправы
+					li.products__catitem
+						i.products__caticon.products__caticon--4
+						span.products__cattext  Бытовая химия
+					li.products__catitem
+						i.products__caticon.products__caticon--5
+						span.products__cattext  Бакалея
+					li.products__catitem
+						i.products__caticon.products__caticon--6
+						span.products__cattext  Молочные продукты
+					li.products__catitem
+						i.products__caticon.products__caticon--7
+						span.products__cattext  Кондитерские изделия
+					li.products__catitem
+						i.products__caticon.products__caticon--8
+						span.products__cattext  Еда быстрого приготовления
+			.col-md-8.col-sm-7.products__grouplist
+				- var list = {1:"Консервы", 2:"Чай", 3:"Соусы / приправы", 4:"Бытовая химия", 5:"Бакалея", 6:"Молочные продукты", 7:"Кондитерские изделия", 8:"Еда быстрого приготовления"}
+				- for (var x=1; x<=8; x++)
+					- if (x == 1)
+						.row.products__groupitem.products__groupitem--active
+							.products__grouptitle
+								i(class = "products__caticon products__caticon--" + x)
+								span= list[x]
+							.products__groupcontent
+								- for (var i=1; i<=8; i++)
+									.col-md-3.col-sm-6.col-xs-6
+										.products__item
+											.products__border
+											.products__item-first
+												- if (i%2 > 0) 
+													img.products__img(src="img/products/1.jpg", alt="")
+												- else 
+													img.products__img(src="img/products/2.jpg", alt="")
+											.products__item-last
+												.products__details
+													h2.products__name Махеев <br> Кетчуп Чили
+													span.products__weight 500 г.
+													span.products__pack Тетрапак
+													span.products__price 02-381
+					- else 
+						.row.products__groupitem
+							.products__grouptitle
+								i(class = "products__caticon products__caticon--" + x)
+								span= list[x]
+							.products__groupcontent
+								- for (var i=1; i<=8; i++)
+									.col-md-3.col-sm-6.col-xs-6
+										.products__item группа #{x}

@@ -1,0 +1,33 @@
+.office
+section.location
+	.container
+		.row
+			.location__col
+				.location__contact 
+					i.location__icon.location__icon--phone
+					.location__descr
+						span.location__descr--small  Свяжитесь по телефону:
+						span.location__descr--big +992 44 625 0077
+				.location__contact
+					i.location__icon.location__icon--envelope
+					.location__descr 
+						span.location__descr--small Напишите на электронную почту:
+						span.location__descr--big info@ideal-m.tj
+				.location__contact
+					i.location__icon.location__icon--map
+					.location__descr 
+						span.location__descr--small Приезжайте в офис:
+						span.location__descr--big пос. Нижний Лучоб
+			.location__col
+				.location__map
+					#google-map
+						#google-container
+						#zoom-in
+						#zoom-out
+
+
+include catalogue.jade
+
+section.location-crsl
+	.container
+		include brands-carousel.jade

@@ -7,7 +7,7 @@ footer.footer
 			.row
 				.company__col-1
 					.company__about О нас
-					.company__text Ideal-M является самой первой дистрибьюторской компанией в Республике Таджикистан, основанной в 1996 году.
+					.company__text  Ideal-M является <strong>самой первой</strong> дистрибьюторской компанией в Республике Таджикистан, основанной в 1996 году.
 				.company__col-2
 					h3.company__newstitle Новости
 					ul.company__newslist
@@ -28,16 +28,26 @@ footer.footer
 
 	.copiright
 		.container
-			.copiright__studio Сделано в Asad Technologies
+			.copiright__studio
+				.asad Сделано с  <i class="fa fa-heart asad__pulse"></i> в <a class="asad__link" href="http://asad.tj" target="_blank">Asad Technologies</a>.
 			.copiright__metonem #metonem
-// bower:js 
-// endbower 
 
+
+//- script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDZCCLkOisEsnV_8G29t0-KwLJryDswbBc')
 // build:js js/combined.js 
 script(src="bower_components/jquery/dist/jquery.js")
 script(src="bower_components/slick-carousel/slick/slick.js")
 script(src="bower_components/jquery-simplyscroll/jquery.simplyscroll.min.js")
 script(src="bower_components/Headhesive.js/dist/headhesive.js")
+script(src="bower_components/video.js/dist/video.js")
+script(src="bower_components/parallax.js/parallax.min.js")
 script(src="js/imagelightbox.min.js")
 script(src="js/main.js")
+//- script(src="js/map.js")
 // endbuild
+
+script.
+	$(document).ready(function(){
+	$('.office').parallax({imageSrc: 'img/location.jpg'});
+	$('.partners__cover').parallax({imageSrc: 'img/partners-cover.jpg'});
+	});

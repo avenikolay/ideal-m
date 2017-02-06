@@ -4,6 +4,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <meta charset="UTF-8"/>
     <title>Ideal-M</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16"/>
+    <link rel="manifest" href="manifest.json"/>
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5"/>
+    <meta name="theme-color" content="#ffffff"/>
     <!-- bower:css -->
     <!-- endbower -->
     <!-- build:css css/combined.css -->
@@ -11,7 +17,7 @@
     <!-- endbuild-->
   </head>
   <body>
-    <div class="wrapper">
+    <div class="wrapper"><a id="back-to-top" href="#" title="Back to top"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
       <div class="firstbtncnvs firstbtncnvs--none"></div>
       <header class="header">
         <div class="container">
@@ -22,10 +28,10 @@
             <div class="header__col-2">
               <nav class="nav"><a id="navicon" href="#" class="nav__navicon"></a>
                 <ul class="nav__list">
-                  <li class="nav__item"><a href="ctalogue.html" class="nav__link">каталог</a></li>
-                  <li class="nav__item"><a href="services.html" class="nav__link">услуги</a></li>
-                  <li class="nav__item nav__item--current"><a href="partners.html" class="nav__link">партнерам</a></li>
+                  <li class="nav__item"><a href="catalogue.html" class="nav__link">каталог</a></li>
                   <li class="nav__item"><a href="brands.html" class="nav__link">бренды</a></li>
+                  <li class="nav__item nav__item--current"><a href="partners.html" class="nav__link">партнерам</a></li>
+                  <li class="nav__item"><a href="services.html" class="nav__link">услуги</a></li>
                   <li class="nav__item"><a href="aboutus.html" class="nav__link">о нас</a></li>
                   <li class="nav__item"><a href="contacts.html" class="nav__link">контакты</a></li>
                 </ul>
@@ -34,7 +40,7 @@
             <div class="header__col-3">
               <div class="socials">
                 <ul class="socials__list">
-                  <li class="socials__item"><a href="" class="socials__link"><i class="socials__facebook"></i></a></li>
+                  <li class="socials__item"><a href="https://www.facebook.com/LLC.Ideal.M/" target="_blank" class="socials__link"><i class="socials__facebook"></i></a></li>
                   <li class="socials__item"><a href="" class="socials__link"><i class="socials__instagram"></i></a></li>
                   <li class="socials__item"><a href="" class="socials__link"><i class="socials__phone"></i></a></li>
                 </ul>
@@ -44,6 +50,7 @@
         </div>
       </header>
       <sections class="partners">
+        <div class="partners__cover"></div>
         <div class="container">
           <h3 class="partners__title">Информация партнерам</h3>
         </div>
@@ -60,14 +67,19 @@
           <div class="row">
             <div class="partners__col-half">
               <h3 class="partners__title">Автопарк</h3>
-              <p class="simple-text">Компания располагает собственным автопарком, состоящим из более 70 грузовых автомашин, в том числе и оборудованные системой поддержки температуры и охлаждением, позволяющих в кратчайшие сроки доставить груз в любую точку республики.</p><img src="img/partners/2.jpg" alt="" class="partners__col-img"/>
+              <p class="simple-text">Компания располагает собственным автопарком, состоящим из более 70 грузовых автомашин, в том числе и оборудованные системой поддержки температуры и охлаждением, позволяющих в кратчайшие сроки доставить груз в любую точку республики.</p>
+              <p class="simple-text">Хочется отметить, что один из основных инстрементов, который делает нашу компанию лучшей на рынке Таджикистана и является интеграция лучших и современных авто с профессиональной командой водителей.</p>
             </div>
             <div class="partners__col-half">
               <h3 class="partners__title">Персонал</h3>
               <p class="simple-text">В компании работают  227 человек, которые нацелены на достижение максимального результата.</p>
               <p class="simple-text">В Душанбе работают  189 сотрудников, в Турсунзаде 16, в Курган-Тюбе – 11,  Худжанде  -11, которые обеспечивают товарами 70% торговых точек страны.</p>
-              <p class="simple-text">Персонал компании состоит  из молодых и креативно мыслящих сотрудников, а также сотрудников с большим опытом работы в сфере торговли и предпринимательства.</p><img src="img/partners/3.jpg" alt="" class="partners__col-img"/>
+              <p class="simple-text">Персонал компании состоит  из молодых и креативно мыслящих сотрудников, а также сотрудников с большим опытом работы в сфере торговли и предпринимательства.</p>
             </div>
+          </div>
+          <div class="partners__rimg">
+            <div class="partners__rimgc"><img src="img/partners/2.jpg" alt="" class="partners__rimgi"/></div>
+            <div class="partners__rimgc">		<img src="img/partners/3.jpg" alt="" class="partners__rimgi"/></div>
           </div>
           <div class="row">
             <div class="partners__col-full">
@@ -80,9 +92,11 @@
               <p class="simple-text">Центральный распределительный склад с температурным режимом Positively оснащен сэндвич-панелями Турецкого производства, оборудован системой  кондиционирования воздуха Итальянского производства  до t-ры +  5+10 град.  </p>
               <p class="simple-text">Склад для хранения продуктов питания оснащен стеллажами методом штабелирования. </p>
               <p class="simple-text">Cклад  для хранения сухих продуктов и товаров бытовой химии оснащен стеллажами  и разделен для хранения  специфических  товаров.</p>
-              <div class="partners__col-inner"><img src="img/partners/4.jpg" alt="" class="partners__col-img"/></div>
-              <div class="partners__col-inner"><img src="img/partners/5.jpg" alt="" class="partners__col-img"/></div>
             </div>
+          </div>
+          <div class="partners__rimg">
+            <div class="partners__rimgc"><img src="img/partners/4.jpg" alt="" class="partners__rimgi"/></div>
+            <div class="partners__rimgc">		<img src="img/partners/5.jpg" alt="" class="partners__rimgi"/></div>
           </div>
           <div class="row">
             <div class="partners__col-full">
@@ -137,7 +151,7 @@
           <div class="row">
             <div class="company__col-1">
               <div class="company__about">О нас</div>
-              <div class="company__text">Ideal-M является самой первой дистрибьюторской компанией в Республике Таджикистан, основанной в 1996 году.</div>
+              <div class="company__text"> Ideal-M является <strong>самой первой</strong> дистрибьюторской компанией в Республике Таджикистан, основанной в 1996 году.</div>
             </div>
             <div class="company__col-2">
               <h3 class="company__newstitle">Новости</h3>
@@ -163,20 +177,28 @@
       </div>
       <div class="copiright">
         <div class="container">
-          <div class="copiright__studio">Сделано в Asad Technologies</div>
+          <div class="copiright__studio">
+            <div class="asad">Сделано с  <i class="fa fa-heart asad__pulse"></i> в <a class="asad__link" href="http://asad.tj" target="_blank">Asad Technologies</a>.</div>
+          </div>
           <div class="copiright__metonem">#metonem</div>
         </div>
       </div>
     </footer>
-    <!-- bower:js -->
-    <!-- endbower -->
     <!-- build:js js/combined.js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/slick-carousel/slick/slick.js"></script>
     <script src="bower_components/jquery-simplyscroll/jquery.simplyscroll.min.js"></script>
     <script src="bower_components/Headhesive.js/dist/headhesive.js"></script>
+    <script src="bower_components/video.js/dist/video.js"></script>
+    <script src="bower_components/parallax.js/parallax.min.js"></script>
     <script src="js/imagelightbox.min.js"></script>
     <script src="js/main.js"></script>
     <!-- endbuild-->
+    <script>
+      $(document).ready(function(){
+      $('.office').parallax({imageSrc: 'img/location.jpg'});
+      $('.partners__cover').parallax({imageSrc: 'img/partners-cover.jpg'});
+      });
+    </script>
   </body>
 </html>

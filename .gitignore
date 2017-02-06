@@ -5,3 +5,6 @@ src/bower_components
 dist/
 node_modules
 psd/
+src/img/*.mp4
+src/img/*.webm
+src/img/*.WebM
