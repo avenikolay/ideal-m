@@ -3,6 +3,7 @@
 @import '../bower_components/slippry/dist/slippry.css';
 @import '../bower_components/slick-carousel/slick/slick.scss';
 @import '../bower_components/video.js/dist/video-js.css';
+@import '../bower_components/modal/stylesheets/jquery.modal.css';
 //@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&subset=cyrillic');
 @import '_roboto.scss';
 @import '_vars.scss';
@@ -25,7 +26,7 @@ body
     position: fixed;
     bottom: 40px;
     right: 40px;
-    z-index: 9999;
+    z-index: 10;
     width: 40px;
     height: 40px;
     text-align: center;
@@ -2098,6 +2099,8 @@ iframe .i4ewOd-pzNkMb-haAclf {
     }
 }
 
+
+
 .footer
 {
     &:before
@@ -2111,5 +2114,107 @@ iframe .i4ewOd-pzNkMb-haAclf {
         background: $brand-color;
 
         @extend .container;
+    }
+}
+
+.callback {
+    max-width: 644px;
+    min-width: 320px;
+    width: 100%;
+    //max-height: 340px;
+    background: #fff;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    padding-bottom: $vertical-bp;
+    &__close {
+        position: absolute;
+        color: #fff !important;
+        opacity: 1;
+        top: 10px !important;
+        right: 10px !important;
+    }
+    &__title {
+        padding: 0;
+        margin: 0;
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: bold;
+        height: 67px;
+        background: $brand-color;
+        color: #fff;
+        @include vertical;
+        text-align: center;
+        @media (max-width: 767px) {
+            font-size: 14px;
+        }
+    }
+
+    &__body {
+        padding: 30px 75px;
+        @media (max-width: 767px) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+    &__text {
+        margin-bottom: 30px;
+    }
+    &__form {
+        max-width: 318px;
+        margin: 0 auto;
+    }
+    &__input-group {
+        @include vertical;
+        border: 2px solid #EFEFEF;
+        border-radius: 5px;
+        margin-bottom: 7px;
+        padding: 0 10px;
+        height: 45px;
+    }
+    &__input-text {
+        font-size: 20px;
+        font-weight: bold;
+        padding-left: 20px;
+        display: inline-block;
+        line-height: 20px;
+        height: 41px;
+        padding: 10.5px 0;
+        vertical-align: middle;
+    }
+    &__input {
+       display: inline-block;
+       padding: 0;
+       margin: 0;
+       border: none;
+       height: 41px;
+       font-size: 20px;
+       line-height: 20px;
+       font-weight: bold;
+       padding: 10.5px 0;
+       vertical-align: middle;
+        &:focus {
+            outline: none;
+        }
+    }
+    &__icon {
+        margin-right: 15px;
+    }
+    &__submit {
+        background: $brand-color;
+        border: none;
+        border-radius: 5px;
+        border: none;
+        height: 45px;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: bold;
+        &:hover, &:focus {
+            background: $text-color;
+        }
+        width: 100%;
     }
 }

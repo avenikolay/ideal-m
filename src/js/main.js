@@ -1,3 +1,13 @@
+(function() {
+  $(function() {
+    return $('.btn-modal').click(function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      return $('.modal').modal();
+    });
+  });
+}).call(this);
+
 $(document).ready(function(){	
 	function hoverBorder() {
 		$('.allbrands__item').each(function(){

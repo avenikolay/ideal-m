@@ -1,1 +1,12 @@
-.callback
+.callback.fade.modal
+	a.close.callback__close(data-dismiss="modal") ×
+	h2.callback__title Обратная связь с менеджером Ideal-M
+	.callback__body 
+		p.callback__text Доброго времени суток! Если у вас появились к нам вопросы, мы с радостью на них ответим. Оставьте свой номер телефона и наш менеджер ответит вам в кротчайшие сроки. Спасибо!
+		form.callback__form
+			.callback__input-group 
+				span.callback__input-text +992
+				input.callback__input(type="tel" max="9")
+			button.callback__submit
+				i.callback__icon.fa.fa-phone 
+				span Свяжитесь со мной

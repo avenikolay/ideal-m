@@ -7,6 +7,7 @@
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 @import url(../bower_components/slippry/dist/slippry.css);
 @import url(../bower_components/video.js/dist/video-js.css);
+@import url(../bower_components/modal/stylesheets/jquery.modal.css);
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -8418,7 +8419,7 @@ body {
   position: fixed;
   bottom: 40px;
   right: 40px;
-  z-index: 9999;
+  z-index: 10;
   width: 40px;
   height: 40px;
   text-align: center;
@@ -10327,3 +10328,98 @@ iframe .i4ewOd-pzNkMb-haAclf {
   height: 4px;
   content: '';
   background: #b206c8; }
+
+.callback {
+  max-width: 644px;
+  min-width: 320px;
+  width: 100%;
+  background: #fff;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  padding-bottom: 45px; }
+  .callback__close {
+    position: absolute;
+    color: #fff !important;
+    opacity: 1;
+    top: 10px !important;
+    right: 10px !important; }
+  .callback__title {
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    height: 67px;
+    background: #b206c8;
+    color: #fff;
+    text-align: center; }
+    .callback__title:after {
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+      content: ""; }
+    @media (max-width: 767px) {
+      .callback__title {
+        font-size: 14px; } }
+  .callback__body {
+    padding: 30px 75px; }
+    @media (max-width: 767px) {
+      .callback__body {
+        padding-left: 15px;
+        padding-right: 15px; } }
+  .callback__text {
+    margin-bottom: 30px; }
+  .callback__form {
+    max-width: 318px;
+    margin: 0 auto; }
+  .callback__input-group {
+    border: 2px solid #EFEFEF;
+    border-radius: 5px;
+    margin-bottom: 7px;
+    padding: 0 10px;
+    height: 45px; }
+    .callback__input-group:after {
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+      content: ""; }
+  .callback__input-text {
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 20px;
+    display: inline-block;
+    line-height: 20px;
+    height: 41px;
+    padding: 10.5px 0;
+    vertical-align: middle; }
+  .callback__input {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    border: none;
+    height: 41px;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: bold;
+    padding: 10.5px 0;
+    vertical-align: middle; }
+    .callback__input:focus {
+      outline: none; }
+  .callback__icon {
+    margin-right: 15px; }
+  .callback__submit {
+    background: #b206c8;
+    border: none;
+    border-radius: 5px;
+    border: none;
+    height: 45px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    width: 100%; }
+    .callback__submit:hover, .callback__submit:focus {
+      background: #333333; }
