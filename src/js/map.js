@@ -1,5 +1,7 @@
 jQuery(document).ready(function($){
-	//Местоположение: долгота, широта и коэффициент увеличения
+
+if (document.getElementById('google-container')) {
+		//Местоположение: долгота, широта и коэффициент увеличения
 	var latitude = 38.6036226,
 		longitude = 68.7608852,
 		map_zoom = 12;
@@ -196,6 +198,8 @@ jQuery(document).ready(function($){
 
   	//Помещаем кнопки увеличить/уменьшить на карту в левый верхний угол
   	map.controls[google.maps.ControlPosition.LEFT_TOP].push(zoomControlDiv);
+	}
+	
 });
 
   

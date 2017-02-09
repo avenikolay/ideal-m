@@ -43,7 +43,7 @@ gulp.task('jade', function() {
 			pretty: true
 	    })).on('error', log) 
 		.pipe(gulp.dest('src'))
-		.pipe(browserSync.reload({stream:true}));
+		.pipe(browserSync.reload());
 });
 
 gulp.task('js', function(){

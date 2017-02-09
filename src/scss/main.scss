@@ -1427,11 +1427,12 @@ body
         }
     }
     &__infographics {
-        margin-bottom: $vertical-bp;
+        //margin-bottom: $vertical-bp;
+        background: #E1E1E1;
     }
     &__infographics-img {
         display: block;
-        max-width: 100%;
+        width: 100%;
         margin: 0 auto;
     }
     &__col-half {
@@ -1468,8 +1469,9 @@ body
             }
         }
     }
-    &__rimgi {
+    &__rimgi, &__rimgi-half {
         width: 100%;
+        //margin-top: 32px;
     }
     &__col-img {
         max-width: 100%;
@@ -1528,11 +1530,141 @@ body
     &__gallery-img {
         width: 100%;
     }
-
-
-    
 }
 
+.info {
+    @include vertical-bp;
+    &__list {
+        padding: 0;
+        margin: 0 -15px;
+    }
+    &__item {
+        list-style-type: none;
+        width: 50%;
+        float: left;
+        @include vertical;
+        margin-bottom: $vertical-bp;
+        padding-left: 15px;
+        padding-right: 15px;
+        @media (max-width: 991px) {
+            margin-bottom: $vertical-bp/2;
+        }
+        @media (max-width: 767px) {
+            width: 100%;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+    }
+    &__icon {
+        width: 41px;
+        height: 41px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 20px;
+        @media (max-width: 767px) {
+           display: block;
+           margin: 0 auto 10px;
+        }
+        @for $i from 1 through 4
+        {
+            &--#{$i}
+            {
+                background: url(../img/info/#{$i}.png) no-repeat;
+            }
+        }
+    }
+    &__text {
+        display: inline-block;
+        vertical-align: middle;
+        width: calc(100% - 61px);
+        @media (max-width: 767px) {
+           display: block;
+           text-align: center;
+           margin: 0;
+           width: 100%;
+        }
+    }
+}
+
+.chain {
+    /* @media (max-width: 767px) {
+       height: 300px;
+    } */
+    @include vertical-bp;
+    &__list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        text-align: justify;
+    }
+    &__item {
+        width: 20%;
+        //height: 77px;
+        float: left;
+        position: relative;
+    }
+    &__arrow-left {
+        width: 72px;
+        height: 17px;
+        background: url(../img/chain/arrow.png) no-repeat;
+        position: absolute;
+        top:50%;
+        left: 20px;
+        background-size: contain;
+        @media (min-width: 768px) {
+           display: none;
+        }
+    }
+    &__arrow-right {
+        width: 72px;
+        height: 17px;
+        background: url(../img/chain/arrow.png) no-repeat;
+        position: absolute;
+        top:50%;
+        right: 0;
+        transform: translateX(50%);
+        background-size: contain;
+        @media (max-width: 991px) {
+            width: 30px;
+        }
+        @media (max-width: 767px) {
+            transform: translateX(0);
+            width: 72px;
+            right: 20px;
+        }
+    }
+    &__text {
+        text-align: center;
+        overflow: hidden;
+        font-weight: bold;
+        /* @media (max-width: 767px) {
+           writing-mode:vertical-rl;
+           margin: 0 auto;
+           transform: rotate(-180deg);
+           overflow: visible;
+           text-align: right;
+        } */
+    }
+    @for $i from 1 through 5
+    {
+        &__icon-#{$i}
+        {
+            height: 77px;
+            width: 77px;
+            margin: 0 auto 25px;
+            display: block;
+            background: url(../img/chain/#{$i}.png) no-repeat;
+            background-size: cover;
+            background-position: center center;
+            /* @media (max-width: 767px) {
+                height: 40px;
+                width: 40px;
+            } */
+        }
+    }
+}
 
 .simple-text {
     @include text();
@@ -1796,6 +1928,9 @@ iframe .i4ewOd-pzNkMb-haAclf {
 
 .products {
     background: #efefef;
+    &__row {
+        position: relative;
+    }
     @include vertical-bp;
     &__title
     {
@@ -1804,6 +1939,7 @@ iframe .i4ewOd-pzNkMb-haAclf {
     &__catlist {
         padding: 0;
         margin: 0;
+        width: 100%;
     }
     &__catitem {
         height: 65px;
@@ -1811,56 +1947,89 @@ iframe .i4ewOd-pzNkMb-haAclf {
         list-style-type: none;
         margin-bottom: 15px;
         color: #fff;
-        padding: 8px 18px;
         @include vertical;
         cursor: pointer;
         transition: background 1s;
+        &--tobrands {
+            background: #fff;
+            color: $brand-color;  
+            .products__catlink {
+                color: $brand-color;
+            }
+            .products__cattext {
+                color: $brand-color;
+            }
+        }
         &--active {
-            background: $text-color;
+            background: lighten($text-color, 0);
         }
         &:hover {
             background: $text-color;
             transition: background .6s;
         }
     }
-    &__grouptitle {
-        height: 65px;
-        background: $brand-color;
-        list-style-type: none;
-        margin-bottom: 1px;
-        color: #fff;
-        padding: 8px 18px;
-        @include vertical;
-        cursor: pointer;
-        text-align: left;
-    }
 
-    &__groupitem--active {
-        .products__grouptitle {
-            //text-align: center;
-            margin-bottom: 15px;
+    &__catlink {
+        overflow: hidden;
+        display: block;
+        padding: 8px 18px;
+        color: #fff;
+        text-decoration: none;
+        &:hover, &:focus {
+            color: #fff;
+            text-decoration: none;
         }
     }
-    
+    &__cattext {
+        color: #fff;
+    }
 
     @media (min-width: 768px) {
         &__grouptitle {
             display: none;
         }
-        &__groupitem {
+        &__catfilter {
             display: none;
-            &--active {
-                display: block;
-                
-            }
         }
+
     }
-    /* &__groupcontent {
-        overflow: hidden;
-    } */
-    @media (max-width: 767px) {
-        &__groupcontent {
+
+     @media (max-width: 767px) {
+        &__catfilter {
+            position: absolute;
+            z-index: 4;
+            height: 50px;
+            width: 100%;
+            background: $brand-color;
+            color: #fff;
+            text-align: center;
+            text-transform: uppercase;
+            line-height: 50px;
+            cursor: pointer;
+            top: 0;
+        }
+        &__catfiltericon {
+            margin-right: 20px;
+        }
+        &__grouplist {
+            margin-top: 80px;
+        }
+        &__catwrapper {
+            position: absolute;
+            width: 100%;
+            z-index: 3;
             display: none;
+            top: 50px;
+            margin-left: -15px;
+            width: calc(100% + 30px);
+            background: $brand-color;
+        }
+        &__catitem {
+            margin-bottom: 0;
+            border-bottom: 1px solid #fff;
+            &:last-child {
+                border-bottom: none;
+            }
         }
     }
 
@@ -1870,11 +2039,18 @@ iframe .i4ewOd-pzNkMb-haAclf {
         width: 48px;
         vertical-align: middle;
         margin-right: 10px;
-        @for $i from 1 through 8 {
+        @for $i from 1 through 9 {
             &--#{$i} {
                 background: url(../img/categories/#{$i}.png) no-repeat;
             }
         }
+    }
+    &__catimg {
+        display: inline-block;
+        height: 48px;
+        width: 48px;
+        vertical-align: middle;
+        margin-right: 10px;
     }
 
     &__border {
@@ -1895,17 +2071,21 @@ iframe .i4ewOd-pzNkMb-haAclf {
         background: #fff;
         text-align: center;
         margin-bottom: 30px;
-        position: relative;    
+        position: relative;
+        transition: border-color 1.5s;
+        border: 8px solid #fff;
+        &:hover, &:focus {
+           border: 8px solid #b206c8;
+            transition: border-color .6s;
+        }  
     }
     &__item-first {
-        height: 132px;
         @include vertical;
         position: relative;
         z-index: 2;
         background: #fff;
     }
     &__item-last {
-        // height: 50%;
         @include vertical;
         padding-top: 8px;
         padding-bottom: 8px;
@@ -1927,15 +2107,36 @@ iframe .i4ewOd-pzNkMb-haAclf {
     &__img {
         display: inline-block;
         vertical-align: center;
-        /* &:hover {
-            transform: scale(1);
-        } */
+        max-width: 100%;
     }
     
     &__price {
         font-size: 18.72px;
         display: block;
         font-weight: bold;
+    }
+    
+    &__addtocart {
+        position: absolute;
+        display: none;
+        background: $brand-color;
+        height: 20px;
+        width: 20px;
+        line-height: 20px;
+        z-index: 3;
+        font-size: 14px;
+        color: #fff;
+        font-style: normal;
+        bottom: 16px;
+        right: 16px;
+        cursor: pointer;
+        &:before {
+            content: "+";
+        }
+    }
+
+    &__item:hover .products__addtocart, &__item:focus .products__addtocart {
+            display: block !important;
     }
 }
 
@@ -2128,7 +2329,7 @@ iframe .i4ewOd-pzNkMb-haAclf {
     top: 0;
     bottom: 0;
     margin: auto;
-    padding-bottom: $vertical-bp;
+    //padding-bottom: $vertical-bp;
     &__close {
         position: absolute;
         color: #fff !important;
@@ -2171,18 +2372,21 @@ iframe .i4ewOd-pzNkMb-haAclf {
         border: 2px solid #EFEFEF;
         border-radius: 5px;
         margin-bottom: 7px;
-        padding: 0 10px;
+        //padding: 0 10px;
         height: 45px;
+        background: #EFEFEF;
     }
     &__input-text {
         font-size: 20px;
         font-weight: bold;
-        padding-left: 20px;
         display: inline-block;
         line-height: 20px;
         height: 41px;
         padding: 10.5px 0;
         vertical-align: middle;
+        text-align: center;
+        width: 40px;
+        background: #EFEFEF;
     }
     &__input {
        display: inline-block;
@@ -2193,8 +2397,9 @@ iframe .i4ewOd-pzNkMb-haAclf {
        font-size: 20px;
        line-height: 20px;
        font-weight: bold;
-       padding: 10.5px 0;
+       padding: 10.5px 10px;
        vertical-align: middle;
+       width: calc(100% - 43.5px);
         &:focus {
             outline: none;
         }

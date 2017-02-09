@@ -391,6 +391,7 @@
         </div>
       </div>
     </footer>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZCCLkOisEsnV_8G29t0-KwLJryDswbBc" async="async"></script>
     <!-- build:js js/combined.js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/modal/javascripts/jquery.modal.js"></script>
@@ -399,8 +400,10 @@
     <script src="bower_components/Headhesive.js/dist/headhesive.js"></script>
     <script src="bower_components/video.js/dist/video.js"></script>
     <script src="bower_components/parallax.js/parallax.min.js"></script>
+    <script src="bower_components/matchHeight/dist/jquery.matchHeight.js"></script>
     <script src="js/imagelightbox.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/map.js"></script>
     <!-- endbuild-->
     <script>
       $(document).ready(function(){
@@ -413,7 +416,7 @@
       <div class="callback__body"> 
         <p class="callback__text">Доброго времени суток! Если у вас появились к нам вопросы, мы с радостью на них ответим. Оставьте свой номер телефона и наш менеджер ответит вам в кротчайшие сроки. Спасибо!</p>
         <form class="callback__form">
-          <div class="callback__input-group"> <span class="callback__input-text">+992</span>
+          <div class="callback__input-group"> <span class="callback__input-text"><i class="fa fa-phone"></i></span>
             <input type="tel" max="9" class="callback__input"/>
           </div>
           <button class="callback__submit"><i class="callback__icon fa fa-phone"> </i><span>Свяжитесь со мной</span></button>

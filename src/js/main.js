@@ -8,141 +8,113 @@
   });
 }).call(this);
 
-$(document).ready(function(){	
-	function hoverBorder() {
-		$('.allbrands__item').each(function(){
-			var w = $(this).width() + 16;
-			$(this).find('.allbrands__border').removeAttr('style').css({'transform': 'scale(' + w + ')'});
-		});
+
+$(document).ready(function(){
+	function catwrapper() {
+		if ($(window).width() < 768) {
+			$('.products__catwrapper').removeAttr('style');
+			$('.products__catfilter').on('click', function(){
+				if(!$('.products__catfilter').hasClass('products__catfilter--active')) {
+					$('.products__catwrapper').stop().slideDown(function(){
+						$('.products__catfilter').addClass('products__catfilter--active');
+					});
+				} else {
+					$('.products__catwrapper').stop().slideUp(function(){
+						$('.products__catfilter').removeClass('products__catfilter--active');
+					});
+				}
+			});			
+		}
 	}
-
-	$('.allbrands__item').on('mouseover', function(){
-		$(this).find('.allbrands__border').css({'opacity': '1', 'transition': 'opacity .6s'}); 
-	})
-	$('.allbrands__item').on('mouseout', function(){
-		$(this).find('.allbrands__border').css({'opacity': '0',  'transition': 'opacity 1s'});
-	});
-
-	hoverBorder();
+	catwrapper();
 
 	$(window).resize(function() {
-		hoverBorder();
+		if ($(window).width() > 767) {
+			$('.products__catwrapper').removeAttr('style');
+			$('.products__catfilter').removeClass('products__catfilter--active');
+		}
+		catwrapper();
 	});
+});
 
-
+$(function() {
+    $('.products__item').matchHeight();
 });
 
 $(document).ready(function(){
-	var maxHeight = 1;
-	var list = $('.products__item');
-	/* Товары одинаковой высоты */
+	
+
+	function slideChine() {
+		if ($(window).width() < 768 && !$('.chain__list').hasClass('slick-initialized')) {
+			$('.chain__list').slick({
+		  		autoplay: true,
+		  		autoplaySpeed: 1000,
+		  		arrows: false
+		  	});
+		}
+		if ( $(window).width() > 767 && $('.chain__list').hasClass('slick-initialized') ) {
+			$('.chain__list').slick('unslick');
+		}
+	}
+	
+	slideChine();
+	$(window).resize(function() {
+		slideChine();
+	});
+
+});
+
+
+$(document).ready(function(){
+	
+	
 	function equalHeight() {
+		var list = $('.partners__col-half');
+		var maxHeight = 1;
+		$('.partners__col-half').removeAttr('style');
+		$('.partners__rimgi-half').removeAttr('style');
 		list.each(function(){
 			if($(this).height() > maxHeight) {
 				maxHeight = $(this).height();
 			}
+		});
+		list.each(function(){
 			$(this).height(maxHeight);
 		});
-	}
-	function hoverBorder() {
-		$('.products__item').each(function(){
-			var w = $(this).width() + 16;
-			var h = $(this).height() + 16;
-			$(this).find('.products__border').removeAttr('style').css({'transform': 'scale(' + w +','+ h + ')', 'display': 'block'});
+
+		$('.partners__rimgi-half').each(function(){
+			$(this).css({'position': 'absolute', 'bottom': 0, 'left': 0, 'right': 0, 'padding': '0 15px'});
 		});
 	}
-	function removeItemStyle () {
-		$('.products__item').each(function(){
-			$(this).removeAttr('style');
-		});
-	}
-	$(window).resize(function() {
-		removeItemStyle();
-		equalHeight();
-		hoverBorder();
-	});
-
-	$('.products__item').mouseover(function(e){
-		$(this).find('.products__border').css({'opacity': '1', 'transition': 'opacity .6s'});
-	}).mouseout(function() {
-		$(this).find('.products__border').css({'opacity': '0',  'transition': 'opacity 1s'});
-	});
-
-
-  /* Табы и прочее... */
-
-
-
-	$('.products__catitem').on('click', function(e){
-		e.preventDefault();
-		if ($(window).width() > 767) {
-			var contentItems = $('.products__groupitem'),
-				itemPosition = $(this).index();
-
-			$(this).addClass('products__catitem--active').siblings().removeClass('products__catitem--active');
-			$('.products__groupitem').eq(itemPosition).addClass('products__groupitem--active').siblings().removeClass('products__groupitem--active');
-		}
-		
-		removeItemStyle();
-		equalHeight();
-		hoverBorder();
-	});
-
-	if ($(window).width() < 768) {
-		$('.products__groupitem--active').find('.products__groupcontent').slideDown(0);
-	}
-
-	$('.products__grouptitle').on('click', function(e){
-		e.preventDefault();
-		if ($(window).width() < 768) {
-			var groupItem = $(this).closest('.products__groupitem'),
-				groupList = $(this).closest('.products__grouplist'),
-				groupItems = groupList.find('.products__groupitem'),
-				groupContent = groupItem.find('.products__groupcontent'),
-				otherContent = groupList.find('.products__groupcontent'),
-				duration = 300,
-
-				catItems = $('.products__catItem'),
-				itemPosition = $(this).index();
-
-
-			if (!groupItem.hasClass('products__groupitem--active')) {
-				groupItems.removeClass('products__groupitem--active');
-				groupItem.addClass('products__groupitem--active');
-				otherContent.stop(true, true).slideUp(duration);
-				groupContent.stop(true, true).slideDown(duration);
-
-				/*changeCatItemByGroupItem();*/
-			} else {
-				groupContent.stop(true, true).slideUp(duration);
-				groupItem.stop(true, true).removeClass('products__groupitem--active');
-			}
-			
-		}
-
-	});
-
-	$(window).resize(function() {
-		$('.products__groupcontent').each(function(){
-			$(this).removeAttr('style');
-		});
-		$('.products__catitem').eq(0).addClass('products__catitem--active').siblings().removeClass('products__catitem--active');
-		$('.products__groupitem').eq(0).addClass('products__groupitem--active').siblings().removeClass('products__groupitem--active');
-
-		if ($(window).width() > 767) {
-			$('.products__groupcontent').removeAttr('style');
-		}
-		if ($(window).width() < 768) {
-			$('.products__groupitem--active').find('.products__groupcontent').slideDown(0);
-		}
-	});
-
-	// приводим все товары к одинаковой высоте
-	removeItemStyle();
 	equalHeight();
+	$(window).resize(function() {
+		equalHeight();
+	});
+});
+$(document).ready(function(){	
+	function hoverBorder() {
+		// $('.allbrands__item').each(function(){
+		// 	var w = $(this).width() + 16;
+		// 	$(this).find('.allbrands__border').removeAttr('style').css({'transform': 'scale(' + w + ')'});
+		// });
+	}
+
+	/*$('.allbrands__item').on('mouseover', function(){
+		$(this).find('.allbrands__border').css({'opacity': '1', 'transition': 'opacity .6s'}); 
+	})
+	$('.allbrands__item').on('mouseout', function(){
+		$(this).find('.allbrands__border').css({'opacity': '0',  'transition': 'opacity 1s'});
+	});*/
+
 	hoverBorder();
 
+	$(window).resize(function() {
+		hoverBorder();
+	});
+
+
 });
+
 
 
 
@@ -186,6 +158,10 @@ $(document).ready(function(){
 			onEnd:	 	 function() { overlayOff();}
 		});
 	$('.c-gallery__link').imageLightbox({
+			onStart: 	 function() { overlayOn(); },
+			onEnd:	 	 function() { overlayOff();}
+		});
+	$('.products__link').imageLightbox({
 			onStart: 	 function() { overlayOn(); },
 			onEnd:	 	 function() { overlayOff();}
 		});
@@ -563,79 +539,93 @@ $(document).ready(function(){
 $(document).ready(function(){
 	
 	function road() {
-		var $car = $('.simple__car'); // машинка
-		var $area = $('.simple__road'); // область
-		var $line = $('.simple__roadline--active'); // линия
+			setPoints();
+	fillPoints(250);
+	$('.simple__road').mousemove(function(e){
+		var cursorPos = getOffsetX(e);
+		fillPoints(cursorPos);
 
+	});
+
+	function fillRoad(pos){
+		var $line = $('.simple__roadline--active');
+		var pos1 = parseFloat(pos) + 10;
+		$line.css("width", pos1 + 'px');
+	}
+
+	function moveCar(pos) {
+		var $area = $('.simple__road');
+		var areaWidth = $area.width(); 
+		var $car = $('.simple__car');
+		var $roadpoints = $('.simple__roadpoint');
+		
+		if (pos < parseFloat($car.css("left"))) {
+			$car.addClass('simple__car--rotated');
+			$car.css({"left": (pos - 40) + "px"});
+
+		} else {
+			//console.log(parseFloat($car.css("left")));
+			$car.removeClass('simple__car--rotated');
+			$car.css({"left": (pos - 115) + "px"});
+		}
+		
+		
+	}
+
+	function fillPoints(pos) {
+		var $roadblocks = $('.simple__roadblock');
 		var $roadpoints = $('.simple__roadpoint'); // массив точек
-		var $roadblocks = $('.simple__roadblock'); // массив блоков с текстом
+		var $area = $('.simple__road'); // область
 		var areaWidth = $area.width(); // ширина полотна
 		var slice = areaWidth/$roadpoints.length; // ширина отрезка
 
-		var cursorPos = false; //начальная позиция курсора 
+		$($roadblocks.eq(0)).addClass('simple__roadblock--active');
+		fillRoad($($roadblocks.eq(0)).attr('data-left'));
 
+		$roadpoints.each(function(index){
+			if (pos >= ($(this).attr('data-left'))) {
+				$(this).addClass('simple__roadpoint--active'); 
+				$($roadblocks[index]).addClass('simple__roadblock--active');
+				fillRoad($(this).attr('data-left'));
+				moveCar($(this).attr('data-left'));
+
+				if(index == 6) {
+					fillRoad(areaWidth);
+				}
+
+			}
+			if (pos < ($(this).attr('data-left'))) {
+				if(index != 0) {
+					$(this).removeClass('simple__roadpoint--active');
+					$($roadblocks[index]).removeClass('simple__roadblock--active');
+				}
+				
+				
+			}
+		});
+
+
+	}
+
+	function getOffsetX(e) {
+		var area = $('.simple__road');
+		var offset = area.offset();
+  		var relativeX = (e.pageX - offset.left);
+  		return relativeX;
+	}
+
+	
+
+	function setPoints() {
+		var $roadpoints = $('.simple__roadpoint'); // массив точек
+		var $area = $('.simple__road'); // область
+		var areaWidth = $area.width(); // ширина полотна
+		var slice = areaWidth/$roadpoints.length; // ширина отрезка
 		$roadpoints.each(function(index){
 			$(this).css('left', ((slice * index) + (slice/2) - $(this).width()/2));
 			$(this).attr('data-left', ((slice * index) + (slice/2) - $(this).width()/2));
 		}); // расставляем дорожные точки
-		$line.css("width", slice/2); // значение дорожки по умолчанию
-		$car.css("left", slice/2 - $car.width()/2); // позиция машинки по умолчанию
-
-		function getOffsetX($el, e) {
-			var offset = $($el).offset();
-	  		var relativeX = (e.pageX - offset.left);
-	  		return relativeX;
-		}
-
-		function moveGeometry() {
-			$('.simple__road').mousemove(function(e){
-				currentCursorPos = getOffsetX(this, e); 
-
-				if((cursorPos != false) && (currentCursorPos < cursorPos)) {
-					$car.addClass('simple__car--rotated');
-					cursorPos = currentCursorPos;
-				} else if((cursorPos != false) && (currentCursorPos > cursorPos)) {
-					$car.removeClass('simple__car--rotated');
-					cursorPos = currentCursorPos;
-				} else {
-					cursorPos = currentCursorPos;
-				}
-
-				var offsetX = getOffsetX(this, e) - ($car.width()+45)/2;
-				// Restraints
-				if(getOffsetX(this, e) > $area.width() - slice/2) {
-					return;
-				} else if(getOffsetX(this, e) < slice/2) {
-					return;
-				}
-
-				$roadpoints.each(function(index){
-					if (cursorPos >= ($(this).attr('data-left'))) {
-						$(this).addClass('simple__roadpoint--active');
-						$($roadblocks[index]).addClass('simple__roadblock--active');
-					}
-					if (cursorPos < ($(this).attr('data-left'))) {
-						$(this).removeClass('simple__roadpoint--active');
-						$($roadblocks[index]).removeClass('simple__roadblock--active');
-					}
-					if ((index == 6) && (cursorPos > (areaWidth - (slice - slice/3)))) {
-						$(this).addClass('simple__roadpoint--active');
-						$($roadblocks[6]).addClass('simple__roadblock--active');
-					}
-				});
-
-				if (cursorPos > (areaWidth - (slice - slice/3))) {
-					$line.css("width", areaWidth + 'px');
-				} else {
-					$line.css("width", getOffsetX(this, e) + 'px');
-				}
-				
-				$car.css("left", offsetX);
-				
-			});
-		}
-
-		$area.on('mouseenter', moveGeometry);
+	}
 	}
 	road();
 
